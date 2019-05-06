@@ -1,0 +1,38 @@
+<!-- This file was auto-generated from WSDL -->
+<!-- by the Apache Axis2 version: #axisVersion# #today# -->
+<serviceGroup>
+<service name="CBSInterfaceProductMgrService">
+<messageReceivers>
+<messageReceiver mep="http://www.w3.org/2004/08/wsdl/in-out" class="com.huawei.bus.ws.skeleton.CBSInterfaceProductMgrServiceMessageReceiverInOut"/>
+</messageReceivers>
+<parameter locked="false" name="ServiceClass">com.huawei.bus.ws.skeleton.CBSInterfaceProductMgrServiceSkeleton</parameter>
+<operation name="QueryProductsByReplacing" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>QueryProductsByReplacing</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/productmgr/CBSInterfaceProductMgr/QueryProductsByReplacingResponse</outputActionMapping>
+</operation>
+<operation name="ReleaseProduct" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>ReleaseProduct</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/productmgr/CBSInterfaceProductMgr/ReleaseProductResponse</outputActionMapping>
+</operation>
+<operation name="QueryBrands" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>QueryBrands</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/productmgr/CBSInterfaceProductMgr/QueryBrandsResponse</outputActionMapping>
+</operation>
+<operation name="QueryProductsBySubscribing" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>QueryProductsBySubscribing</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/productmgr/CBSInterfaceProductMgr/QueryProductsBySubscribingResponse</outputActionMapping>
+</operation>
+<operation name="QueryProductsByNewSubscriber" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>QueryProductsByNewSubscriber</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/productmgr/CBSInterfaceProductMgr/QueryProductsByNewSubscriberResponse</outputActionMapping>
+</operation>
+<operation name="QueryProductListInfo" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>QueryProductListInfo</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/productmgr/CBSInterfaceProductMgr/QueryProductListInfoResponse</outputActionMapping>
+</operation>
+<operation name="QueryProductInformation" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>QueryProductInformation</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/productmgr/CBSInterfaceProductMgr/QueryProductInformationResponse</outputActionMapping>
+</operation>
+</service>
+</serviceGroup>

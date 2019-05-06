@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:uvccommon="http://www.huawei.com/bme/cbsinterface/uvccommon" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.huawei.com/bme/cbsinterface/uvccommon" schemaLocation="CBSInterface_UVC_Common.xsd"/>
+	<xs:complexType name="CardAuthenticationRequest">
+		<xs:sequence>
+			<xs:element name="RechargeNumberInfo" type="uvccommon:RechargeNumberType"/>
+			<xs:element name="CallingNumber" type="xs:string"/>
+			<xs:element name="PIN" type="uvccommon:PINType"/>
+			<xs:element name="AccessMethod" type="xs:int" minOccurs="0"/>
+			<xs:element name="AuthFlag" type="xs:string" minOccurs="0"/>
+			<xs:element name="SerialNo" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CardAuthenticationResult">
+		<xs:sequence>
+		  <xs:element name="Result" type="xs:int"/>
+			<xs:element name="VoucherInfo" type="VoucherInfoType" minOccurs="0"/>
+			<xs:element name="RechargeResource" type="uvccommon:RechargeResouceType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="VoucherInfoType">
+		<xs:sequence>
+			<xs:element name="BatchNo" type="xs:string" minOccurs="0"/>
+			<xs:element name="Sequence" type="xs:string" minOccurs="0"/>
+			<xs:element name="FaceValue" type="xs:int" minOccurs="0"/>
+			<xs:element name="Currency" type="xs:int" minOccurs="0"/>
+			<xs:element name="CardCosid" type="xs:int" minOccurs="0"/>
+			<xs:element name="CardSPID" type="xs:int" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

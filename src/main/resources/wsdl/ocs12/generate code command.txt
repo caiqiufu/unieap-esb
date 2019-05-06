@@ -1,0 +1,5 @@
+wsimport -keep -s C:\Users\Thinkpad\Desktop\tt -p com.huawei.ocs12.accountmgrservice -verbose E:\OneDrive\09-tt\unieap\unieap-esb\src\main\resources\wsdl\ocs12\META-INF_AccountMgr\CBSInterfaceAccountMgrService.wsdl
+
+wsimport -keep -s C:\Users\Thinkpad\Desktop\tt -p com.huawei.ocs12.businessmgrservice -verbose E:\OneDrive\09-tt\unieap\unieap-esb\src\main\resources\wsdl\ocs12\META-INF_BusinessMgr\CBSInterfaceBusinessMgrService.wsdl
+
+wsimport -keep -s C:\Users\Thinkpad\Desktop\tt -p com.huawei.ocs12.productmgrservice -verbose E:\OneDrive\09-tt\unieap\unieap-esb\src\main\resources\wsdl\ocs12\META-INF_ProductMgr\CBSInterfaceProductMgrService.wsdl

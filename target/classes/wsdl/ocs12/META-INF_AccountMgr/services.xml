@@ -1,0 +1,114 @@
+<!-- This file was auto-generated from WSDL -->
+<!-- by the Apache Axis2 version: #axisVersion# #today# -->
+<serviceGroup>
+<service name="CBSInterfaceAccountMgrService">
+<messageReceivers>
+<messageReceiver mep="http://www.w3.org/2004/08/wsdl/in-out" class="com.huawei.bus.ws.skeleton.CBSInterfaceAccountMgrServiceMessageReceiverInOut"/>
+</messageReceivers>
+<parameter locked="false" name="ServiceClass">com.huawei.bus.ws.skeleton.CBSInterfaceAccountMgrServiceSkeleton</parameter>
+<operation name="QueryBonusHistory" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>QueryBonusHistory</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/QueryBonusHistoryResponse</outputActionMapping>
+</operation>
+<operation name="VoucherRechargeBySeq" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>VoucherRechargeBySeq</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/VoucherRechargeBySeqResponse</outputActionMapping>
+</operation>
+<operation name="PaymentEnquiry" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>PaymentEnquiry</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/PaymentEnquiryResponse</outputActionMapping>
+</operation>
+<operation name="TransferAccount" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>TransferAccount</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/TransferAccountResponse</outputActionMapping>
+</operation>
+<operation name="QueryTransferLog" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>QueryTransferLog</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/QueryTransferLogResponse</outputActionMapping>
+</operation>
+<operation name="ModSubBillCycleType" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>ModSubBillCycleType</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/ModSubBillCycleTypeResponse</outputActionMapping>
+</operation>
+<operation name="CumulateEnquiry" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>CumulateEnquiry</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/CumulateEnquiryResponse</outputActionMapping>
+</operation>
+<operation name="AdjustAccount" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>AdjustAccount</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/AdjustAccountResponse</outputActionMapping>
+</operation>
+<operation name="TransInPpsPos" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>TransInPpsPos</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/TransInPpsPosResponse</outputActionMapping>
+</operation>
+<operation name="QueryCallHistory" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>QueryCallHistory</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/QueryCallHistoryResponse</outputActionMapping>
+</operation>
+<operation name="ServiceHandleFee" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>ServiceHandleFee</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/ServiceHandleFeeResponse</outputActionMapping>
+</operation>
+<operation name="VoucherEnquiryByPIN" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>VoucherEnquiryByPIN</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/VoucherEnquiryByPINResponse</outputActionMapping>
+</operation>
+<operation name="QueryBalance" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>QueryBalance</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/QueryBalanceResponse</outputActionMapping>
+</operation>
+<operation name="SubAccountRecharge" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>SubAccountRecharge</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/SubAccountRechargeResponse</outputActionMapping>
+</operation>
+<operation name="VoucherRecharge" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>VoucherRecharge</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/VoucherRechargeResponse</outputActionMapping>
+</operation>
+<operation name="BalanceToValidity" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>BalanceToValidity</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/BalanceToValidityResponse</outputActionMapping>
+</operation>
+<operation name="ModifyVoucherState" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>ModifyVoucherState</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/ModifyVoucherStateResponse</outputActionMapping>
+</operation>
+<operation name="VoucherEnquiryBySeq" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>VoucherEnquiryBySeq</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/VoucherEnquiryBySeqResponse</outputActionMapping>
+</operation>
+<operation name="OneOffDeduction" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>OneOffDeduction</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/OneOffDeductionResponse</outputActionMapping>
+</operation>
+<operation name="QueryAdjustmentLog" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>QueryAdjustmentLog</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/QueryAdjustmentLogResponse</outputActionMapping>
+</operation>
+<operation name="Payment" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>Payment</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/PaymentResponse</outputActionMapping>
+</operation>
+<operation name="ReversePayment" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>ReversePayment</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/ReversePaymentResponse</outputActionMapping>
+</operation>
+<operation name="AdjustSubAccount" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>AdjustSubAccount</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/AdjustSubAccountResponse</outputActionMapping>
+</operation>
+<operation name="ExchangeAccount" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>ExchangeAccount</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/ExchangeAccountResponse</outputActionMapping>
+</operation>
+<operation name="VoucherRechargeEnquiry" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>VoucherRechargeEnquiry</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/VoucherRechargeEnquiryResponse</outputActionMapping>
+</operation>
+<operation name="ActiveFirst" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>ActiveFirst</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/ActiveFirstResponse</outputActionMapping>
+</operation>
+</service>
+</serviceGroup>

@@ -1,0 +1,323 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:product="http://www.huawei.com/bme/cbsinterface/cbs/productmgr" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.huawei.com/bme/cbsinterface/cbs/productmgr">
+<xs:simpleType name="ProductType">
+<xs:restriction base="xs:string">
+<xs:enumeration value="0"/>
+<xs:enumeration value="1"/>
+<xs:enumeration value="2"/>
+<xs:enumeration value="3"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="MainProductType">
+<xs:restriction base="xs:string">
+<xs:enumeration value="20"/>
+<xs:enumeration value="21"/>
+<xs:enumeration value="22"/>
+<xs:enumeration value="23"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="AppendantProductType">
+<xs:restriction base="xs:string">
+<xs:enumeration value="0"/>
+<xs:enumeration value="1"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="ProductTypeDetail">
+<xs:union memberTypes="product:MainProductType product:AppendantProductType"/>
+</xs:simpleType>
+<xs:simpleType name="Paymode">
+<xs:restriction base="xs:string">
+<xs:enumeration value="0"/>
+<xs:enumeration value="1"/>
+<xs:enumeration value="2"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="isNull">
+<xs:restriction base="xs:string">
+<xs:enumeration value="4050000"/>
+<xs:enumeration value="4050001"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="EffMode">
+<xs:restriction base="xs:string">
+<xs:enumeration value="4050000"/>
+<xs:enumeration value="4050001"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="SelectType">
+<xs:restriction base="xs:string">
+<xs:enumeration value="4050000"/>
+<xs:enumeration value="4050001"/>
+<xs:enumeration value="4050002"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:complexType name="IdName">
+<xs:sequence>
+<xs:element name="Id" type="xs:string"/>
+<xs:element name="Name" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="IdNameList"/>
+<xs:complexType block="extension" name="SimplePropertyDefinition">
+<xs:complexContent>
+<xs:extension base="product:IdName">
+<xs:sequence>
+<xs:element name="ValueFrom">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:enumeration value="4050000"/>
+<xs:enumeration value="4050001"/>
+<xs:enumeration value="4050002"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="DisplayMode">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:enumeration value="4050000"/>
+<xs:enumeration value="4050001"/>
+<xs:enumeration value="4050002"/>
+<xs:enumeration value="4050003"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element minOccurs="0" name="EnumKey" type="xs:string">
+<xs:annotation>
+<xs:documentation>When 'ValueFrom' is 'Dictionary', 'EnumKey' is special dictionary  item name.</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element minOccurs="0" name="MinValue" type="xs:integer"/>
+<xs:element minOccurs="0" name="MaxValue" type="xs:integer"/>
+<xs:element minOccurs="0" name="isNull" type="product:isNull"/>
+<xs:element name="isMultiValue" type="product:isNull"/>
+<xs:element minOccurs="0" name="MultiMaxNum" type="xs:integer"/>
+<xs:element minOccurs="0" name="RegExpr" type="xs:string">
+<xs:annotation>
+<xs:documentation>Regular expression</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element minOccurs="0" name="DefaultValue" type="xs:string"/>
+<xs:element name="Remark" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType block="extension" name="ComplexPropertyDefinition">
+<xs:complexContent>
+<xs:extension base="product:IdName">
+<xs:sequence>
+<xs:element name="isMultiValue" type="product:isNull"/>
+<xs:element minOccurs="0" name="MultiMaxNum" type="xs:integer"/>
+<xs:element name="Remark" type="xs:string"/>
+<xs:element maxOccurs="unbounded" name="SimplePropertyDefinition" type="product:SimplePropertyDefinition"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType block="extension" name="Service">
+<xs:complexContent>
+<xs:extension base="product:IdName">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="SimpleProperty" type="product:SimplePropertyDefinition"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="ComplexProperty" type="product:ComplexPropertyDefinition"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType block="extension" name="Product">
+<xs:complexContent>
+<xs:extension base="product:IdName">
+<xs:sequence>
+<xs:element name="Version" type="xs:string"/>
+<xs:element name="Type" type="product:ProductType"/>
+<xs:element name="TypeDetail" type="product:ProductTypeDetail"/>
+<xs:element minOccurs="0" name="BrandId" type="xs:string">
+<xs:annotation>
+<xs:documentation>Only main product has brand</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element minOccurs="0" name="BrandName" type="xs:string">
+<xs:annotation>
+<xs:documentation>Only main product has brand</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element minOccurs="0" name="Paymode" type="product:Paymode">
+<xs:annotation>
+<xs:documentation>Only main product has paymode</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="Remark" type="xs:string"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="SimpleProperty" type="product:SimplePropertyDefinition"/>
+<xs:element block="extension" maxOccurs="unbounded" minOccurs="0" name="Service">
+<xs:complexType>
+<xs:complexContent>
+<xs:extension base="product:Service">
+<xs:sequence>
+<xs:element name="SelectType" type="product:SelectType"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="QueryBrandsResult">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="IdName" type="product:IdName">
+<xs:annotation>
+<xs:documentation>Return all brand id and name</xs:documentation>
+</xs:annotation>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="QueryProductsByNewSubscriberRequest">
+<xs:sequence>
+<xs:element name="TypeDetail" type="product:ProductTypeDetail">
+<xs:annotation>
+<xs:documentation>Individual or Group type</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element minOccurs="0" name="BrandId" type="xs:string"/>
+<xs:element minOccurs="0" name="Paymode" type="product:Paymode"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="QueryProductsByNewSubscriberResult">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="ProductInfo">
+<xs:complexType>
+<xs:complexContent>
+<xs:extension base="product:IdName">
+<xs:sequence>
+<xs:element name="EffectiveDate" type="xs:string"/>
+<xs:element name="ExpireDate" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="QueryProductsBySubscribingRequest">
+<xs:sequence>
+<xs:element name="SubscriberNo" type="xs:string">
+<xs:annotation>
+<xs:documentation>Only query appendant products the subscriber can subscribe</xs:documentation>
+</xs:annotation>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="QueryProductsBySubscribingResult">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="ProductInfo">
+<xs:complexType>
+<xs:complexContent>
+<xs:extension base="product:IdName">
+<xs:sequence>
+<xs:element name="EffectiveDate" type="xs:string"/>
+<xs:element name="ExpireDate" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="QueryProductsByReplacingRequest">
+<xs:sequence>
+<xs:element name="SubscriberNo" type="xs:string">
+<xs:annotation>
+<xs:documentation>Subscriber no</xs:documentation>
+</xs:annotation>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="QueryProductsByReplacingResult">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="IdName" type="product:IdName"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="QueryProductInformationRequest">
+<xs:sequence>
+<xs:element name="Id" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="QueryProductInformationResult">
+<xs:sequence>
+<xs:element block="extension" minOccurs="0" name="Product">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="Id" type="xs:string"/>
+<xs:element name="Name" type="xs:string"/>
+<xs:element name="Version" type="xs:string"/>
+<xs:element name="Type" type="product:ProductType"/>
+<xs:element name="TypeDetail" type="product:ProductTypeDetail"/>
+<xs:element minOccurs="0" name="BrandId" type="xs:string"/>
+<xs:element minOccurs="0" name="BrandName" type="xs:string"/>
+<xs:element minOccurs="0" name="Paymode" type="product:Paymode"/>
+<xs:element name="Remark" type="xs:string"/>
+<xs:element name="EffectiveDate" type="xs:string"/>
+<xs:element name="ExpireDate" type="xs:string"/>
+<xs:element minOccurs="0" name="EffType" type="product:EffMode"/>
+<xs:element minOccurs="0" name="ExpType" type="product:EffMode"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="SimpleProperty">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="Id" type="xs:string"/>
+<xs:element name="Value" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element block="extension" maxOccurs="unbounded" minOccurs="0" name="AppendantProduct">
+<xs:complexType>
+<xs:complexContent>
+<xs:extension base="product:IdName">
+<xs:sequence>
+<xs:element name="EffectiveDate" type="xs:string"/>
+<xs:element name="ExpireDate" type="xs:string"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="SimpleProperty">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="Id" type="xs:string"/>
+<xs:element name="Value" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="ReleaseProductRequest">
+<xs:sequence>
+<xs:element name="Id" type="xs:string"/>
+<xs:element name="EffectiveDate" type="xs:string"/>
+<xs:element name="ExpireDate" type="xs:string"/>
+<xs:element name="OperateType" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="QueryProductListInfoRequest">
+<xs:sequence>
+<xs:element name="QueryTime" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="QueryProductListInfoResult">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="ProductList">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="ID" type="xs:string"/>
+<xs:element name="Name" type="xs:string"/>
+<xs:element name="Paymode" type="product:Paymode"/>
+<xs:element name="Type" type="product:ProductType"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

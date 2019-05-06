@@ -1,0 +1,568 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:cbscommon="http://www.huawei.com/bme/cbsinterface/cbscommon" xmlns:bc="http://www.huawei.com/bme/cbsinterface/bcservices" targetNamespace="http://www.huawei.com/bme/cbsinterface/bcservices">
+	<types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://www.huawei.com/bme/cbsinterface/bcservices">
+			<import namespace="http://www.huawei.com/bme/cbsinterface/cbscommon" schemaLocation="CBSInterface_MessageHeader.xsd"/>
+			
+			<!-- 00-->
+			<include schemaLocation="CBSInterface_BC_ChangeSubOffering.xsd"/>
+			<include schemaLocation="CBSInterface_BC_ChangeOfferingProperty.xsd"/>
+			<include schemaLocation="CBSInterface_BC_ChangeSubIdentity.xsd"/>
+			<include schemaLocation="CBSInterface_BC_CreateGroup.xsd"/>
+			<include schemaLocation="CBSInterface_BC_ChangeGroupOffering.xsd"/>
+			<include schemaLocation="CBSInterface_BC_GroupDeactivation.xsd"/>
+			<include schemaLocation="CBSInterface_BC_ChangeGroupMemberInfo.xsd"/>
+			<include schemaLocation="CBSInterface_BC_AcctDeactivation.xsd"/>
+			<include schemaLocation="CBSInterface_BC_QueryCustomerInfo.xsd"/>
+			<include schemaLocation="CBSInterface_BC_QueryGroupListBySubscriber.xsd"/>
+			<include schemaLocation="CBSInterface_BC_QueryOfferingInstProperty.xsd"/>
+			<include schemaLocation="CBSInterface_BC_AddGroupMember.xsd"/>
+			<include schemaLocation="CBSInterface_BC_DelGroupMember.xsd"/>
+			
+			<!-- 001-->
+			<element name="AcctDeactivationRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="cbscommon:RequestHeader"/>
+						<xs:element name="AcctDeactivationRequest" type="bc:AcctDeactivationRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="AcctDeactivationResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="cbscommon:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+
+			<element name="ChangeSubOfferingRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="cbscommon:RequestHeader"/>
+						<xs:element name="ChangeSubOfferingRequest" type="bc:ChangeSubOfferingRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ChangeSubOfferingResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="cbscommon:ResultHeader"/>
+						<xs:element name="ChangeSubOfferingResult" type="bc:ChangeSubOfferingResult" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+
+			<element name="ChangeOfferingPropertyRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="cbscommon:RequestHeader"/>
+						<xs:element name="ChangeOfferingPropertyRequest" type="bc:ChangeOfferingPropertyRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ChangeOfferingPropertyResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="cbscommon:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+
+			<element name="QueryOfferingInstPropertyRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="cbscommon:RequestHeader"/>
+						<xs:element name="QueryOfferingInstPropertyRequest" type="bc:QueryOfferingInstPropertyRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryOfferingInstPropertyResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="cbscommon:ResultHeader"/>
+						<xs:element name="QueryOfferingInstPropertyResult" type="bc:QueryOfferingInstPropertyResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			
+			<element name="QueryCustomerInfoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="cbscommon:RequestHeader"/>
+						<xs:element name="QueryCustomerInfoRequest" type="bc:QueryCustomerInfoRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryCustomerInfoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="cbscommon:ResultHeader"/>
+						<xs:element name="QueryCustomerInfoResult" type="bc:QueryCustomerInfoResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>			
+
+			<element name="ChangeSubIdentityRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="cbscommon:RequestHeader"/>
+						<xs:element name="ChangeSubIdentityRequest" type="bc:ChangeSubIdentityRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ChangeSubIdentityResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="cbscommon:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+
+			<element name="QueryGroupListBySubscriberRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="cbscommon:RequestHeader"/>
+						<xs:element name="QueryGroupListBySubscriberRequest" type="bc:QueryGroupListBySubscriberRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryGroupListBySubscriberResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="cbscommon:ResultHeader"/>
+						<xs:element name="QueryGroupListBySubscriberResult" type="bc:QueryGroupListBySubscriberResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+
+			<element name="CreateGroupRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="cbscommon:RequestHeader"/>
+						<xs:element name="CreateGroupRequest" type="bc:CreateGroupRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="CreateGroupResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="cbscommon:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element> 
+ 
+			<element name="GroupDeactivationRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="cbscommon:RequestHeader"/>
+						<xs:element name="GroupDeactivationRequest" type="bc:GroupDeactivationRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="GroupDeactivationResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="cbscommon:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+ 
+			<element name="ChangeGroupOfferingRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="cbscommon:RequestHeader"/>
+						<xs:element name="ChangeGroupOfferingRequest" type="bc:ChangeGroupOfferingRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ChangeGroupOfferingResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="cbscommon:ResultHeader"/>
+						<xs:element name="ChangeGroupOfferingResult" type="bc:ChangeGroupOfferingResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element> 
+
+			<element name="AddGroupMemberRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="cbscommon:RequestHeader"/>
+						<xs:element name="AddGroupMemberRequest" type="bc:AddGroupMemberRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="AddGroupMemberResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="cbscommon:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+
+			<element name="DelGroupMemberRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="cbscommon:RequestHeader"/>
+						<xs:element name="DelGroupMemberRequest" type="bc:DelGroupMemberRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="DelGroupMemberResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="cbscommon:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+ 
+
+			<element name="ChangeGroupMemberInfoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="cbscommon:RequestHeader"/>
+						<xs:element name="ChangeGroupMemberInfoRequest" type="bc:ChangeGroupMemberInfoRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ChangeGroupMemberInfoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="cbscommon:ResultHeader"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+
+			<element name="ChangeGroupMemberOfferingRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="cbscommon:RequestHeader"/>
+						<xs:element name="ChangeGroupMemberOfferingRequest" type="bc:ChangeGroupMemberOfferingRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="ChangeGroupMemberOfferingResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="cbscommon:ResultHeader"/>
+						<xs:element name="ChangeGroupMemberOfferingResult" type="bc:ChangeGroupMemberOfferingResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>		
+	
+		</xs:schema>
+	</types>
+	
+	<!-- 002-->
+	<message name="AcctDeactivationRequestMessage">
+		<part name="AcctDeactivationRequestMsg" element="bc:AcctDeactivationRequestMsg"/>
+	</message>
+	<message name="AcctDeactivationResultMessage">
+		<part name="AcctDeactivationResultMsg" element="bc:AcctDeactivationResultMsg"/>
+	</message>
+	
+	<message name="ChangeSubOfferingRequestMessage">
+		<part name="ChangeSubOfferingRequestMsg" element="bc:ChangeSubOfferingRequestMsg"/>
+	</message>
+	<message name="ChangeSubOfferingResultMessage">
+		<part name="ChangeSubOfferingResultMsg" element="bc:ChangeSubOfferingResultMsg"/>
+	</message>
+	
+	<message name="ChangeOfferingPropertyRequestMessage">
+		<part name="ChangeOfferingPropertyRequestMsg" element="bc:ChangeOfferingPropertyRequestMsg"/>
+	</message>
+	<message name="ChangeOfferingPropertyResultMessage">
+		<part name="ChangeOfferingPropertyResultMsg" element="bc:ChangeOfferingPropertyResultMsg"/>
+	</message>	
+	
+	<message name="QueryOfferingInstPropertyRequestMessage">
+		<part name="QueryOfferingInstPropertyRequestMsg" element="bc:QueryOfferingInstPropertyRequestMsg"/>
+	</message>
+	<message name="QueryOfferingInstPropertyResultMessage">
+		<part name="QueryOfferingInstPropertyResultMsg" element="bc:QueryOfferingInstPropertyResultMsg"/>
+	</message>
+	
+	<message name="QueryCustomerInfoRequestMessage">
+		<part name="QueryCustomerInfoRequestMsg" element="bc:QueryCustomerInfoRequestMsg"/>
+	</message>
+	<message name="QueryCustomerInfoResultMessage">
+		<part name="QueryCustomerInfoResultMsg" element="bc:QueryCustomerInfoResultMsg"/>
+	</message>
+	
+	<message name="ChangeSubIdentityRequestMessage">
+		<part name="ChangeSubIdentityRequestMsg" element="bc:ChangeSubIdentityRequestMsg"/>
+	</message>
+	<message name="ChangeSubIdentityResultMessage">
+		<part name="ChangeSubIdentityResultMsg" element="bc:ChangeSubIdentityResultMsg"/>
+	</message>
+	
+	<message name="QueryGroupListBySubscriberRequestMessage">
+		<part name="QueryGroupListBySubscriberRequestMsg" element="bc:QueryGroupListBySubscriberRequestMsg"/>
+	</message>
+	<message name="QueryGroupListBySubscriberResultMessage">
+		<part name="QueryGroupListBySubscriberResultMsg" element="bc:QueryGroupListBySubscriberResultMsg"/>
+	</message>		
+	
+	<message name="CreateGroupRequestMessage">
+		<part name="CreateGroupRequestMsg" element="bc:CreateGroupRequestMsg"/>
+	</message>
+	<message name="CreateGroupResultMessage">
+		<part name="CreateGroupResultMsg" element="bc:CreateGroupResultMsg"/>
+	</message>
+	
+	<message name="GroupDeactivationRequestMessage">
+		<part name="GroupDeactivationRequestMsg" element="bc:GroupDeactivationRequestMsg"/>
+	</message>
+	<message name="GroupDeactivationResultMessage">
+		<part name="GroupDeactivationResultMsg" element="bc:GroupDeactivationResultMsg"/>
+	</message>
+	
+	<message name="ChangeGroupOfferingRequestMessage">
+		<part name="ChangeGroupOfferingRequestMsg" element="bc:ChangeGroupOfferingRequestMsg"/>
+	</message>
+	<message name="ChangeGroupOfferingResultMessage">
+		<part name="ChangeGroupOfferingResultMsg" element="bc:ChangeGroupOfferingResultMsg"/>
+	</message>
+	
+	<message name="AddGroupMemberRequestMessage">
+		<part name="AddGroupMemberRequestMsg" element="bc:AddGroupMemberRequestMsg"/>
+	</message>
+	<message name="AddGroupMemberResultMessage">
+		<part name="AddGroupMemberResultMsg" element="bc:AddGroupMemberResultMsg"/>
+	</message>
+	
+	<message name="DelGroupMemberRequestMessage">
+		<part name="DelGroupMemberRequestMsg" element="bc:DelGroupMemberRequestMsg"/>
+	</message>
+	<message name="DelGroupMemberResultMessage">
+		<part name="DelGroupMemberResultMsg" element="bc:DelGroupMemberResultMsg"/>
+	</message>
+	
+	<message name="ChangeGroupMemberInfoRequestMessage">
+		<part name="ChangeGroupMemberInfoRequestMsg" element="bc:ChangeGroupMemberInfoRequestMsg"/>
+	</message>
+	<message name="ChangeGroupMemberInfoResultMessage">
+		<part name="ChangeGroupMemberInfoResultMsg" element="bc:ChangeGroupMemberInfoResultMsg"/>
+	</message>
+	
+	<message name="ChangeGroupMemberOfferingRequestMessage">
+		<part name="ChangeGroupMemberOfferingRequestMsg" element="bc:ChangeGroupMemberOfferingRequestMsg"/>
+	</message>
+	<message name="ChangeGroupMemberOfferingResultMessage">
+		<part name="ChangeGroupMemberOfferingResultMsg" element="bc:ChangeGroupMemberOfferingResultMsg"/>
+	</message>							
+	
+	<!-- 003-->
+	<portType name="BcServices">
+		<operation name="AcctDeactivation">
+			<input message="bc:AcctDeactivationRequestMessage"/>
+			<output message="bc:AcctDeactivationResultMessage"/>
+		</operation>
+		<operation name="ChangeSubOffering">
+			<input message="bc:ChangeSubOfferingRequestMessage"/>
+			<output message="bc:ChangeSubOfferingResultMessage"/>
+		</operation>
+		<operation name="ChangeOfferingProperty">
+			<input message="bc:ChangeOfferingPropertyRequestMessage"/>
+			<output message="bc:ChangeOfferingPropertyResultMessage"/>
+		</operation>
+		<operation name="QueryOfferingInstProperty">
+			<input message="bc:QueryOfferingInstPropertyRequestMessage"/>
+			<output message="bc:QueryOfferingInstPropertyResultMessage"/>
+		</operation>
+		<operation name="QueryCustomerInfo">
+			<input message="bc:QueryCustomerInfoRequestMessage"/>
+			<output message="bc:QueryCustomerInfoResultMessage"/>
+		</operation>
+		<operation name="ChangeSubIdentity">
+			<input message="bc:ChangeSubIdentityRequestMessage"/>
+			<output message="bc:ChangeSubIdentityResultMessage"/>
+		</operation>
+		<operation name="QueryGroupListBySubscriber">
+			<input message="bc:QueryGroupListBySubscriberRequestMessage"/>
+			<output message="bc:QueryGroupListBySubscriberResultMessage"/>
+		</operation>								
+		<operation name="CreateGroup">
+			<input message="bc:CreateGroupRequestMessage"/>
+			<output message="bc:CreateGroupResultMessage"/>
+		</operation>
+		<operation name="GroupDeactivation">
+			<input message="bc:GroupDeactivationRequestMessage"/>
+			<output message="bc:GroupDeactivationResultMessage"/>
+		</operation>
+		<operation name="ChangeGroupOffering">
+			<input message="bc:ChangeGroupOfferingRequestMessage"/>
+			<output message="bc:ChangeGroupOfferingResultMessage"/>
+		</operation>
+		<operation name="AddGroupMember">
+			<input message="bc:AddGroupMemberRequestMessage"/>
+			<output message="bc:AddGroupMemberResultMessage"/>
+		</operation>
+		<operation name="DelGroupMember">
+			<input message="bc:DelGroupMemberRequestMessage"/>
+			<output message="bc:DelGroupMemberResultMessage"/>
+		</operation>
+		<operation name="ChangeGroupMemberInfo">
+			<input message="bc:ChangeGroupMemberInfoRequestMessage"/>
+			<output message="bc:ChangeGroupMemberInfoResultMessage"/>
+		</operation>
+		<operation name="ChangeGroupMemberOffering">
+			<input message="bc:ChangeGroupMemberOfferingRequestMessage"/>
+			<output message="bc:ChangeGroupMemberOfferingResultMessage"/>
+		</operation>		
+	</portType>
+	
+	<!--004 -->
+	<binding name="BcServicsBinding" type="bc:BcServices">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		
+		
+		<operation name="AcctDeactivation">
+			<soap:operation soapAction="AcctDeactivation" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		
+		<operation name="ChangeSubOffering">
+			<soap:operation soapAction="ChangeSubOffering" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		
+		<operation name="ChangeOfferingProperty">
+			<soap:operation soapAction="ChangeOfferingProperty" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		
+		<operation name="QueryOfferingInstProperty">
+			<soap:operation soapAction="QueryOfferingInstProperty" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		
+		<operation name="QueryCustomerInfo">
+			<soap:operation soapAction="QueryCustomerInfo" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		
+		<operation name="ChangeSubIdentity">
+			<soap:operation soapAction="ChangeSubIdentity" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		
+		<operation name="QueryGroupListBySubscriber">
+			<soap:operation soapAction="QueryGroupListBySubscriber" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		
+		<operation name="CreateGroup">
+			<soap:operation soapAction="CreateGroup" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		
+		<operation name="GroupDeactivation">
+			<soap:operation soapAction="GroupDeactivation" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		
+		<operation name="ChangeGroupOffering">
+			<soap:operation soapAction="ChangeGroupOffering" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		
+		<operation name="AddGroupMember">
+			<soap:operation soapAction="AddGroupMember" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		
+		<operation name="DelGroupMember">
+			<soap:operation soapAction="DelGroupMember" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		
+		<operation name="ChangeGroupMemberInfo">
+			<soap:operation soapAction="ChangeGroupMemberInfo" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		
+		<operation name="ChangeGroupMemberOffering">
+			<soap:operation soapAction="ChangeGroupMemberOffering" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>		
+		
+	</binding>
+
+	<service name="BcServices">
+		<port name="BcServicesPort" binding="bc:BcServicsBinding">
+			<soap:address location="http://www.huawei.com/bme/cbsinterface/bcservices/wsdl/CBSInterface_BC_Services.wsdl"/>
+		</port>
+	</service>
+</definitions>

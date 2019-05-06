@@ -1,0 +1,118 @@
+<wsdl:definitions xmlns:product="http://www.huawei.com/bme/cbsinterface/cbs/productmgr" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:productmgrmsg="http://www.huawei.com/bme/cbsinterface/cbs/productmgrmsg" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:common="http://www.huawei.com/bme/cbsinterface/common" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://www.huawei.com/bme/cbsinterface/cbs/productmgr"><wsdl:types><xs:schema xmlns="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.huawei.com/bme/cbsinterface/common">
+<xs:include schemaLocation="xsd0.xsd" />
+</xs:schema><xs:schema xmlns="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.huawei.com/bme/cbsinterface/cbs/productmgr">
+<xs:include schemaLocation="xsd1.xsd" />
+</xs:schema><xs:schema xmlns="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.huawei.com/bme/cbsinterface/cbs/productmgrmsg">
+<xs:import namespace="http://www.huawei.com/bme/cbsinterface/common" schemaLocation="xsd0.xsd" />
+<xs:import namespace="http://www.huawei.com/bme/cbsinterface/cbs/productmgr" schemaLocation="xsd1.xsd" />
+<xs:element name="QueryBrandsRequestMsg">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="RequestHeader" type="common:RequestHeader" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="QueryBrandsResultMsg">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="ResultHeader" type="common:ResultHeader" />
+<xs:element name="QueryBrandsResult" type="product:QueryBrandsResult" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="QueryProductsByNewSubscriberRequestMsg">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="RequestHeader" type="common:RequestHeader" />
+<xs:element name="QueryProductsByNewSubscriberRequest" type="product:QueryProductsByNewSubscriberRequest" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="QueryProductsByNewSubscriberResultMsg">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="ResultHeader" type="common:ResultHeader" />
+<xs:element name="QueryProductsByNewSubscriberResult" type="product:QueryProductsByNewSubscriberResult" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="QueryProductsBySubscribingRequestMsg">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="RequestHeader" type="common:RequestHeader" />
+<xs:element name="QueryProductsBySubscribingRequest" type="product:QueryProductsBySubscribingRequest" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="QueryProductsBySubscribingResultMsg">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="ResultHeader" type="common:ResultHeader" />
+<xs:element name="QueryProductsBySubscribingResult" type="product:QueryProductsBySubscribingResult" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="QueryProductsByReplacingRequestMsg">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="RequestHeader" type="common:RequestHeader" />
+<xs:element name="QueryProductsByReplacingRequest" type="product:QueryProductsByReplacingRequest" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="QueryProductsByReplacingResultMsg">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="ResultHeader" type="common:ResultHeader" />
+<xs:element name="QueryProductsByReplacingResult" type="product:QueryProductsByReplacingResult" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="QueryProductInformationRequestMsg">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="RequestHeader" type="common:RequestHeader" />
+<xs:element name="QueryProductInformationRequest" type="product:QueryProductInformationRequest" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="QueryProductInformationResultMsg">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="ResultHeader" type="common:ResultHeader" />
+<xs:element name="QueryProductInformationResult" type="product:QueryProductInformationResult" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="ReleaseProductRequestMsg">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="RequestHeader" type="common:RequestHeader" />
+<xs:element name="ReleaseProductRequest" type="product:ReleaseProductRequest" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="ReleaseProductResultMsg">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="ResultHeader" type="common:ResultHeader" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="QueryProductListInfoRequestMsg">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="RequestHeader" type="common:RequestHeader" />
+<xs:element name="QueryProductListInfoRequest" type="product:QueryProductListInfoRequest" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="QueryProductListInfoResultMsg">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="ResultHeader" type="common:ResultHeader" />
+<xs:element name="QueryProductListInfoResult" type="product:QueryProductListInfoResult" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:schema></wsdl:types><wsdl:message name="QueryProductsByReplacingRequestMessage"><wsdl:part name="part1" element="productmgrmsg:QueryProductsByReplacingRequestMsg" /></wsdl:message><wsdl:message name="QueryProductsByReplacingResultMessage"><wsdl:part name="part1" element="productmgrmsg:QueryProductsByReplacingResultMsg" /></wsdl:message><wsdl:message name="ReleaseProductRequestMessage"><wsdl:part name="part1" element="productmgrmsg:ReleaseProductRequestMsg" /></wsdl:message><wsdl:message name="ReleaseProductResultMessage"><wsdl:part name="part1" element="productmgrmsg:ReleaseProductResultMsg" /></wsdl:message><wsdl:message name="QueryBrandsRequestMessage"><wsdl:part name="part1" element="productmgrmsg:QueryBrandsRequestMsg" /></wsdl:message><wsdl:message name="QueryBrandsResultMessage"><wsdl:part name="part1" element="productmgrmsg:QueryBrandsResultMsg" /></wsdl:message><wsdl:message name="QueryProductsBySubscribingRequestMessage"><wsdl:part name="part1" element="productmgrmsg:QueryProductsBySubscribingRequestMsg" /></wsdl:message><wsdl:message name="QueryProductsBySubscribingResultMessage"><wsdl:part name="part1" element="productmgrmsg:QueryProductsBySubscribingResultMsg" /></wsdl:message><wsdl:message name="QueryProductsByNewSubscriberRequestMessage"><wsdl:part name="part1" element="productmgrmsg:QueryProductsByNewSubscriberRequestMsg" /></wsdl:message><wsdl:message name="QueryProductsByNewSubscriberResultMessage"><wsdl:part name="part1" element="productmgrmsg:QueryProductsByNewSubscriberResultMsg" /></wsdl:message><wsdl:message name="QueryProductListInfoRequestMessage"><wsdl:part name="part1" element="productmgrmsg:QueryProductListInfoRequestMsg" /></wsdl:message><wsdl:message name="QueryProductListInfoResultMessage"><wsdl:part name="part1" element="productmgrmsg:QueryProductListInfoResultMsg" /></wsdl:message><wsdl:message name="QueryProductInformationRequestMessage"><wsdl:part name="part1" element="productmgrmsg:QueryProductInformationRequestMsg" /></wsdl:message><wsdl:message name="QueryProductInformationResultMessage"><wsdl:part name="part1" element="productmgrmsg:QueryProductInformationResultMsg" /></wsdl:message><wsdl:portType name="CBSInterfaceProductMgrServicePortType"><wsdl:operation name="QueryProductsByReplacing"><wsdl:input xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" message="product:QueryProductsByReplacingRequestMessage" wsaw:Action="QueryProductsByReplacing" /><wsdl:output xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" message="product:QueryProductsByReplacingResultMessage" wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/productmgr/CBSInterfaceProductMgr/QueryProductsByReplacingResponse" /></wsdl:operation><wsdl:operation name="ReleaseProduct"><wsdl:input xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" message="product:ReleaseProductRequestMessage" wsaw:Action="ReleaseProduct" /><wsdl:output xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" message="product:ReleaseProductResultMessage" wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/productmgr/CBSInterfaceProductMgr/ReleaseProductResponse" /></wsdl:operation><wsdl:operation name="QueryBrands"><wsdl:input xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" message="product:QueryBrandsRequestMessage" wsaw:Action="QueryBrands" /><wsdl:output xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" message="product:QueryBrandsResultMessage" wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/productmgr/CBSInterfaceProductMgr/QueryBrandsResponse" /></wsdl:operation><wsdl:operation name="QueryProductsBySubscribing"><wsdl:input xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" message="product:QueryProductsBySubscribingRequestMessage" wsaw:Action="QueryProductsBySubscribing" /><wsdl:output xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" message="product:QueryProductsBySubscribingResultMessage" wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/productmgr/CBSInterfaceProductMgr/QueryProductsBySubscribingResponse" /></wsdl:operation><wsdl:operation name="QueryProductsByNewSubscriber"><wsdl:input xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" message="product:QueryProductsByNewSubscriberRequestMessage" wsaw:Action="QueryProductsByNewSubscriber" /><wsdl:output xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" message="product:QueryProductsByNewSubscriberResultMessage" wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/productmgr/CBSInterfaceProductMgr/QueryProductsByNewSubscriberResponse" /></wsdl:operation><wsdl:operation name="QueryProductListInfo"><wsdl:input xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" message="product:QueryProductListInfoRequestMessage" wsaw:Action="QueryProductListInfo" /><wsdl:output xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" message="product:QueryProductListInfoResultMessage" wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/productmgr/CBSInterfaceProductMgr/QueryProductListInfoResponse" /></wsdl:operation><wsdl:operation name="QueryProductInformation"><wsdl:input xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" message="product:QueryProductInformationRequestMessage" wsaw:Action="QueryProductInformation" /><wsdl:output xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" message="product:QueryProductInformationResultMessage" wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/productmgr/CBSInterfaceProductMgr/QueryProductInformationResponse" /></wsdl:operation></wsdl:portType><wsdl:binding name="CBSInterfaceProductMgrServiceSOAP11Binding" type="product:CBSInterfaceProductMgrServicePortType"><soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" /><wsdl:operation name="QueryProductsByReplacing"><soap:operation soapAction="QueryProductsByReplacing" style="document" /><wsdl:input><soap:body use="literal" /></wsdl:input><wsdl:output><soap:body use="literal" /></wsdl:output></wsdl:operation><wsdl:operation name="ReleaseProduct"><soap:operation soapAction="ReleaseProduct" style="document" /><wsdl:input><soap:body use="literal" /></wsdl:input><wsdl:output><soap:body use="literal" /></wsdl:output></wsdl:operation><wsdl:operation name="QueryBrands"><soap:operation soapAction="QueryBrands" style="document" /><wsdl:input><soap:body use="literal" /></wsdl:input><wsdl:output><soap:body use="literal" /></wsdl:output></wsdl:operation><wsdl:operation name="QueryProductsBySubscribing"><soap:operation soapAction="QueryProductsBySubscribing" style="document" /><wsdl:input><soap:body use="literal" /></wsdl:input><wsdl:output><soap:body use="literal" /></wsdl:output></wsdl:operation><wsdl:operation name="QueryProductsByNewSubscriber"><soap:operation soapAction="QueryProductsByNewSubscriber" style="document" /><wsdl:input><soap:body use="literal" /></wsdl:input><wsdl:output><soap:body use="literal" /></wsdl:output></wsdl:operation><wsdl:operation name="QueryProductListInfo"><soap:operation soapAction="QueryProductListInfo" style="document" /><wsdl:input><soap:body use="literal" /></wsdl:input><wsdl:output><soap:body use="literal" /></wsdl:output></wsdl:operation><wsdl:operation name="QueryProductInformation"><soap:operation soapAction="QueryProductInformation" style="document" /><wsdl:input><soap:body use="literal" /></wsdl:input><wsdl:output><soap:body use="literal" /></wsdl:output></wsdl:operation></wsdl:binding><wsdl:binding name="CBSInterfaceProductMgrServiceSOAP12Binding" type="product:CBSInterfaceProductMgrServicePortType"><soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" /><wsdl:operation name="QueryProductsByReplacing"><soap12:operation soapAction="QueryProductsByReplacing" style="document" /><wsdl:input><soap12:body use="literal" /></wsdl:input><wsdl:output><soap12:body use="literal" /></wsdl:output></wsdl:operation><wsdl:operation name="ReleaseProduct"><soap12:operation soapAction="ReleaseProduct" style="document" /><wsdl:input><soap12:body use="literal" /></wsdl:input><wsdl:output><soap12:body use="literal" /></wsdl:output></wsdl:operation><wsdl:operation name="QueryBrands"><soap12:operation soapAction="QueryBrands" style="document" /><wsdl:input><soap12:body use="literal" /></wsdl:input><wsdl:output><soap12:body use="literal" /></wsdl:output></wsdl:operation><wsdl:operation name="QueryProductsBySubscribing"><soap12:operation soapAction="QueryProductsBySubscribing" style="document" /><wsdl:input><soap12:body use="literal" /></wsdl:input><wsdl:output><soap12:body use="literal" /></wsdl:output></wsdl:operation><wsdl:operation name="QueryProductsByNewSubscriber"><soap12:operation soapAction="QueryProductsByNewSubscriber" style="document" /><wsdl:input><soap12:body use="literal" /></wsdl:input><wsdl:output><soap12:body use="literal" /></wsdl:output></wsdl:operation><wsdl:operation name="QueryProductListInfo"><soap12:operation soapAction="QueryProductListInfo" style="document" /><wsdl:input><soap12:body use="literal" /></wsdl:input><wsdl:output><soap12:body use="literal" /></wsdl:output></wsdl:operation><wsdl:operation name="QueryProductInformation"><soap12:operation soapAction="QueryProductInformation" style="document" /><wsdl:input><soap12:body use="literal" /></wsdl:input><wsdl:output><soap12:body use="literal" /></wsdl:output></wsdl:operation></wsdl:binding><wsdl:service name="CBSInterfaceProductMgrService"><wsdl:port name="CBSInterfaceProductMgrServiceSOAP11port_http" binding="product:CBSInterfaceProductMgrServiceSOAP11Binding"><soap:address location="http://www.huawei.com/bme/cbsinterface/productmgr/wsdl/CBSInterface_ProductMgr.wsdl" /></wsdl:port><wsdl:port name="CBSInterfaceProductMgrServiceSOAP12port_http" binding="product:CBSInterfaceProductMgrServiceSOAP12Binding"><soap12:address location="http://www.huawei.com/bme/cbsinterface/productmgr/wsdl/CBSInterface_ProductMgr.wsdl" /></wsdl:port></wsdl:service></wsdl:definitions>

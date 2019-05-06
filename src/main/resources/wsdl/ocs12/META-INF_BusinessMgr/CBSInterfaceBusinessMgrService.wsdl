@@ -1,0 +1,4082 @@
+<wsdl:definitions
+	xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:businessmgrmsg="http://www.huawei.com/bme/cbsinterface/cbs/businessmgrmsg"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:common="http://www.huawei.com/bme/cbsinterface/common"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:business="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	targetNamespace="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr">
+	<wsdl:types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema"
+			attributeFormDefault="unqualified" elementFormDefault="unqualified"
+			targetNamespace="http://www.huawei.com/bme/cbsinterface/common">
+			<xs:include schemaLocation="xsd0.xsd" />
+		</xs:schema>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema"
+			attributeFormDefault="unqualified" elementFormDefault="unqualified"
+			targetNamespace="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr">
+			<xs:include schemaLocation="xsd1.xsd" />
+		</xs:schema>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema"
+			attributeFormDefault="unqualified" elementFormDefault="unqualified"
+			targetNamespace="http://www.huawei.com/bme/cbsinterface/cbs/businessmgrmsg">
+			<xs:import
+				namespace="http://www.huawei.com/bme/cbsinterface/common"
+				schemaLocation="xsd0.xsd" />
+			<xs:import
+				namespace="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr"
+				schemaLocation="xsd1.xsd" />
+			<xs:element name="QueryBasicInfoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="QueryBasicInfoRequest"
+							type="business:QueryBasicInfoRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QueryBasicInfoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="QueryBasicInfoResult"
+							type="business:QueryBasicInfoResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="CheckPasswordRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="CheckPasswordRequest"
+							type="business:CheckPasswordRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="CheckPasswordResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="NewSubscriberRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="NewSubscriberRequest"
+							type="business:NewSubscriberRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="NewSubscriberResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="NewSubscriberResult" nillable="true"
+							type="business:NewSubscriberResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ReNewSubscriberRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="ReNewSubscriberRequest"
+							type="business:ReNewSubscriberRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ReNewSubscriberResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="ReNewSubscriberResult"
+							type="business:ReNewSubscriberResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="DeleteSubscriberRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="DeleteSubscriberRequest"
+							type="business:DeleteSubscriberRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="DeleteSubscriberResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="DeleteSubscriberResult"
+							type="business:DeleteSubscriberResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ChangeMainProdRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="ChangeMainProdRequest"
+							type="business:ChangeMainProdRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ChangeMainProdResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="ChangeMainProdResult" nillable="true"
+							type="business:ChangeMainProdResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="SubscribeAppendantProductRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="SubscribeAppendantProductRequest"
+							type="business:SubscribeAppendantProductRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="SubscribeAppendantProductResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="SubscribeAppendantProductResult"
+							type="business:SubscribeAppendantProductResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="BatchSubscribeAppProductRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="BatchSubscribeAppProductRequest"
+							type="business:BatchSubscribeAppProductRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="BatchSubscribeAppProductResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="BatchSubscribeAppProductResult"
+							type="business:BatchSubscribeAppProductResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ChangeAppendantProductRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="ChangeAppendantProductRequest"
+							type="business:ChangeAppendantProductRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ChangeAppendantProductResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="ChangeAppendantProductResult"
+							nillable="true" type="business:ChangeAppendantProductResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="UnSubscribeAppendantProductRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="UnSubscribeAppendantProductRequest"
+							type="business:UnSubscribeAppendantProductRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="UnSubscribeAppendantProductResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ChangeCustBasicInforRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="ChangeCustBasicInforRequest"
+							type="business:ChangeCustBasicInforRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ChangeCustBasicInforResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ChangeSubscriberBasicInforRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="ChangeSubscriberBasicInforRequest"
+							type="business:ChangeSubscriberBasicInforRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ChangeSubscriberBasicInforResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="ChangeSubscriberBasicInforResult"
+							type="business:ChangeSubscriberBasicInforResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ChangeAccountBasicInforRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="ChangeAccountBasicInforRequest"
+							type="business:ChangeAccountBasicInforRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ChangeAccountBasicInforResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ChangePasswordRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="ChangePasswordRequest"
+							type="business:ChangePasswordRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ChangePasswordResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ResetPasswordRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="ResetPasswordRequest"
+							type="business:ResetPasswordRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ResetPasswordResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ChangeMSISDNRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="ChangeMSISDNRequest"
+							type="business:ChangeMSISDNRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ChangeMSISDNResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ChangeSIMRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="ChangeSIMRequest"
+							type="business:ChangeSIMRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ChangeSIMResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ChangeServicesRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="ChangeServicesRequest"
+							type="business:ChangeServicesRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ChangeServicesResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="DeleteRechageBlackRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="DeleteRechageBlackRequest"
+							type="business:DeleteRechageBlackRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="DeleteRechageBlackResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="SuspendRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="SuspendRequest"
+							type="business:SuspendRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="SuspendResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ReconnectRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="ReconnectRequest"
+							type="business:ReconnectRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ReconnectResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ClaimMissingRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="ClaimMissingRequest"
+							type="business:ClaimMissingRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ClaimMissingResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="DisclaimMissingRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="DisclaimMissingRequest"
+							type="business:DisclaimMissingRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="DisclaimMissingResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="BatchOperationRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="BatchOperationRequest"
+							type="business:BatchOperationRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="BatchOperationResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ChangeOwnerRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="ChangeOwnerRequest"
+							type="business:ChangeOwnerRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ChangeOwnerResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QueryUserGroupRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="QueryUserGroupRequest"
+							type="business:QueryUserGroupRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QueryUserGroupResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="QueryUserGroupResult"
+							type="business:QueryUserGroupResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ManGroupMemberRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="ManGroupMemberRequest"
+							type="business:ManGroupMemberRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ManGroupMemberResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="ManGroupMemberResult"
+							type="business:ManGroupMemberResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QuerySubscribedGroupRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="QuerySubscribedGroupRequest"
+							type="business:QuerySubscribedGroupRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QuerySubscribedGroupResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="QuerySubscribedGroupResult"
+							type="business:QuerySubscribedGroupResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ModifySubscriberValidityRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="ModifySubscriberValidityRequest"
+							type="business:ModifySubscriberValidityRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ModifySubscriberValidityResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="ModifySubscriberValidityResult"
+							type="business:ModifySubscriberValidityResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ModifySubscriberStateRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="ModifySubscriberStateRequest"
+							type="business:ModifySubscriberStateRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ModifySubscriberStateResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="IntegrationEnquiryRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="IntegrationEnquiryRequest"
+							type="business:IntegrationEnquiryRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="IntegrationEnquiryResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="IntegrationEnquiryResult"
+							type="business:IntegrationEnquiryResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QuerySubscriberProductInfoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="QuerySubscriberProductInfoRequest"
+							type="business:QuerySubscriberProductInfoRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QuerySubscriberProductInfoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="QuerySubscriberProductInfoResult"
+							nillable="true" type="business:QuerySubscriberProductInfoResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QuerySubscriberServiceInfoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="QuerySubscriberServiceInfoRequest"
+							type="business:QuerySubscriberServiceInfoRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QuerySubscriberServiceInfoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="QuerySubscriberServiceInfoResult"
+							type="business:QuerySubscriberServiceInfoResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ManSubCallScreenNoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="ManSubCallScreenNoRequest"
+							type="business:ManSubCallScreenNoRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ManSubCallScreenNoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ManSubFamilyNoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="ManSubFamilyNoRequest"
+							type="business:ManSubFamilyNoRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ManSubFamilyNoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="ManSubFamilyNoResult"
+							type="business:ManSubFamilyNoResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ChangeSubLowBalPrtRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="ChangeSubLowBalPrtRequest"
+							type="business:ChangeSubLowBalPrtRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ChangeSubLowBalPrtResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QuerySubLowBalPrtRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="QuerySubLowBalPrtRequest"
+							type="business:QuerySubLowBalPrtRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QuerySubLowBalPrtResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="QuerySubLowBalPrtResult"
+							type="business:QuerySubLowBalPrtResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ManSubHomeZoneRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="ManSubHomeZoneRequest"
+							type="business:ManSubHomeZoneRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ManSubHomeZoneResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ManPromotionPlanRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="ManPromotionPlanRequest"
+							type="business:ManPromotionPlanRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ManPromotionPlanResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QueryPromotionPlanRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="QueryPromotionPlanRequest"
+							type="business:QueryPromotionPlanRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QueryPromotionPlanResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="QueryPromotionPlanResult"
+							type="business:QueryPromotionPlanResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ModifyPosUserStateRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="ModifyPosUserStateRequest"
+							type="business:ModifyPosUserStateRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ModifyPosUserStateResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QuerySubCallScreenNoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="QuerySubCallScreenNoRequest"
+							type="business:QuerySubCallScreenNoRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QuerySubCallScreenNoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="QuerySubCallScreenNoResult"
+							type="business:QuerySubCallScreenNoResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QuerySubFamilyNoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="QuerySubFamilyNoRequest"
+							type="business:QuerySubFamilyNoRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QuerySubFamilyNoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="QuerySubFamilyNoResult"
+							type="business:QuerySubFamilyNoResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QuerySubHomeZoneRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="QuerySubHomeZoneRequest"
+							type="business:QuerySubHomeZoneRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QuerySubHomeZoneResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="QuerySubHomeZoneResult"
+							type="business:QuerySubHomeZoneResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QueryAdjustValidityLogRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="QueryAdjustValidityLogRequest"
+							type="business:QueryAdjustValidityLogRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QueryAdjustValidityLogResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="QueryAdjustValidityLogResult"
+							type="business:QueryAdjustValidityLogResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QueryGroupMemberRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="QueryGroupMemberRequest"
+							type="business:QueryGroupMemberRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QueryGroupMemberResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="QueryGroupMemberResult"
+							type="business:QueryGroupMemberResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QuerySubChangeLogRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="QuerySubChangeLogRequest"
+							type="business:QuerySubChangeLogRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QuerySubChangeLogResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="QuerySubChangeLogResult"
+							type="business:QuerySubChangeLogResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ManParentChildRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="ManParentChildRequest"
+							type="business:ManParentChildRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ManParentChildResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="ManParentChildResult"
+							type="business:ManParentChildResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QueryChildLimitRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="QueryChildLimitRequest"
+							type="business:QueryChildLimitRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QueryChildLimitResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="QueryChildLimitResult"
+							type="business:QueryChildLimitResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ModifyCFNoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="ModifyCFNoRequest"
+							type="business:ModifyCFNoRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ModifyCFNoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="BlockSubscriberRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="BlockSubscriberRequest"
+							type="business:BlockSubscriberRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="BlockSubscriberResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="BlockSubscriberResult"
+							type="business:BlockSubscriberResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="NewSubscriberExtRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="NewSubscriberExtRequest"
+							type="business:NewSubscriberExtRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="NewSubscriberExtResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="NewSubscriberExtResult"
+							type="business:NewSubscriberExtResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="BindProductSubscriberNoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="BindProductSubscriberNoRequest"
+							type="business:BindProductSubscriberNoRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="BindProductSubscriberNoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="DeleteSubscriberExtRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="DeleteSubscriberExtRequest"
+							type="business:DeleteSubscriberExtRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="DeleteSubscriberExtResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="DeleteSubscriberExtResult"
+							type="business:DeleteSubscriberExtResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element
+				name="UnSubscribeAppendantProductExtRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element
+							name="UnSubscribeAppendantProductExtRequest"
+							type="business:UnSubscribeAppendantProductExtRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="UnSubscribeAppendantProductExtResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="UnSubscribeAppendantProductExtResult"
+							type="business:UnSubscribeAppendantProductExtResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QueryDefinedZonesInfoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="QueryDefinedZonesInfoRequest"
+							type="business:QueryDefinedZonesInfoRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QueryDefinedZonesInfoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="QueryDefinedZonesInfoResult"
+							type="business:QueryDefinedZonesInfoResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="CheckOperatorPasswordRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="CheckOperatorPasswordRequest"
+							type="business:CheckOperatorPasswordRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="CheckOperatorPasswordResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="CheckUVCPartPinRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="CheckUVCPartPinRequest"
+							type="business:CheckUVCPartPinRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="CheckUVCPartPinResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element minOccurs="0" name="CheckUVCPartPinResult"
+							type="business:CheckUVCPartPinResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ChangeCreditLevelRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="ChangeCreditLevelRequest"
+							type="business:ChangeCreditLevelRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ChangeCreditLevelResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="SynDTDiscountRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="SynDTDiscountRequest"
+							type="business:SynDTDiscountRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="SynDTDiscountResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QueryLanguageInfRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="QueryLanguageInfRequest"
+							type="business:QueryLanguageInfRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QueryLanguageInfResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QueryPassInfoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="QueryPassInfoRequest"
+							type="business:QueryPassInfoRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QueryPassInfoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="QueryPassInfoResult"
+							type="business:QueryPassInfoResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QueryAccumulatedPassInfoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="QueryAccumulatedPassInfoRequest"
+							type="business:QueryAccumulatedPassInfoRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QueryAccumulatedPassInfoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="QueryAccumulatedPassInfoResult"
+							type="business:QueryAccumulatedPassInfoResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QueryPassCapEventInfoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="QueryPassCapEventInfoRequest"
+							type="business:QueryPassCapEventInfoRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QueryPassCapEventInfoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="QueryPassCapEventInfoResult"
+							type="business:QueryPassCapEventInfoResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ManCUGInfoRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="ManCUGInfoRequest"
+							type="business:ManCUGInfoRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ManCUGInfoResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="ManCUGInfoResult"
+							type="business:ManCUGInfoResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="UpdateSubscriberSegmentationRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="UpdateSubscriberSegmentationRequest"
+							type="business:UpdateSubscriberSegmentationRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="UpdateSubscriberSegmentationResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="UpdateSubscriberSegmentationResult"
+							type="business:UpdateSubscriberSegmentationResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QueryCUGTypeRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="QueryCUGTypeRequest"
+							type="business:QueryCUGTypeRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QueryCUGTypeResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="QueryCUGTypeResult"
+							type="business:QueryCUGTypeResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QueryCUGMembersRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="QueryCUGMembersRequest"
+							type="business:QueryCUGMembersRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QueryCUGMembersResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="QueryCUGMembersResult"
+							type="business:QueryCUGMembersResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="UpdateCUGListRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="UpdateCUGListRequest"
+							type="business:UpdateCUGListRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="UpdateCUGListResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="UpdateCUGListResult"
+							type="business:UpdateCUGListResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QueryInterActLogRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="QueryInterActLogRequest"
+							type="business:QueryInterActLogRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QueryInterActLogResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="QueryInterActLogResult"
+							type="business:QueryInterActLogResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="DisclaimMissingRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:DisclaimMissingRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="DisclaimMissingResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:DisclaimMissingResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="ChangeAppendantProductRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ChangeAppendantProductRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="ChangeAppendantProductResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ChangeAppendantProductResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="ManSubFamilyNoRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ManSubFamilyNoRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="ManSubFamilyNoResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ManSubFamilyNoResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="QueryLanguageInfRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QueryLanguageInfRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="QueryLanguageInfResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QueryLanguageInfResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="ChangeServicesRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ChangeServicesRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="ChangeServicesResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ChangeServicesResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="ModifyPosUserStateRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ModifyPosUserStateRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="ModifyPosUserStateResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ModifyPosUserStateResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="ManCUGInfoRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ManCUGInfoRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="ManCUGInfoResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ManCUGInfoResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="IntegrationEnquiryRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:IntegrationEnquiryRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="IntegrationEnquiryResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:IntegrationEnquiryResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="QueryDefinedZonesInfoRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QueryDefinedZonesInfoRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="QueryDefinedZonesInfoResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QueryDefinedZonesInfoResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="ManSubCallScreenNoRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ManSubCallScreenNoRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="ManSubCallScreenNoResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ManSubCallScreenNoResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="QueryUserGroupRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QueryUserGroupRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="QueryUserGroupResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QueryUserGroupResultMsg" />
+	</wsdl:message>
+	<wsdl:message
+		name="QueryAccumulatedPassInfoRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QueryAccumulatedPassInfoRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="QueryAccumulatedPassInfoResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QueryAccumulatedPassInfoResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="QueryAdjustValidityLogRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QueryAdjustValidityLogRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="QueryAdjustValidityLogResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QueryAdjustValidityLogResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="ModifyCFNoRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ModifyCFNoRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="ModifyCFNoResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ModifyCFNoResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="UpdateCUGListRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:UpdateCUGListRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="UpdateCUGListResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:UpdateCUGListResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="QuerySubHomeZoneRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QuerySubHomeZoneRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="QuerySubHomeZoneResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QuerySubHomeZoneResultMsg" />
+	</wsdl:message>
+	<wsdl:message
+		name="UnSubscribeAppendantProductExtRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:UnSubscribeAppendantProductExtRequestMsg" />
+	</wsdl:message>
+	<wsdl:message
+		name="UnSubscribeAppendantProductExtResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:UnSubscribeAppendantProductExtResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="QueryPassInfoRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QueryPassInfoRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="QueryPassInfoResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QueryPassInfoResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="CheckOperatorPasswordRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:CheckOperatorPasswordRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="CheckOperatorPasswordResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:CheckOperatorPasswordResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="NewSubscriberExtRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:NewSubscriberExtRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="NewSubscriberExtResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:NewSubscriberExtResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="ManSubHomeZoneRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ManSubHomeZoneRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="ManSubHomeZoneResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ManSubHomeZoneResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="BindProductSubscriberNoRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:BindProductSubscriberNoRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="BindProductSubscriberNoResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:BindProductSubscriberNoResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="ClaimMissingRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ClaimMissingRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="ClaimMissingResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ClaimMissingResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="ChangeSIMRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ChangeSIMRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="ChangeSIMResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ChangeSIMResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="ManGroupMemberRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ManGroupMemberRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="ManGroupMemberResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ManGroupMemberResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="QuerySubLowBalPrtRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QuerySubLowBalPrtRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="QuerySubLowBalPrtResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QuerySubLowBalPrtResultMsg" />
+	</wsdl:message>
+	<wsdl:message
+		name="SubscribeAppendantProductRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:SubscribeAppendantProductRequestMsg" />
+	</wsdl:message>
+	<wsdl:message
+		name="SubscribeAppendantProductResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:SubscribeAppendantProductResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="ManPromotionPlanRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ManPromotionPlanRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="ManPromotionPlanResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ManPromotionPlanResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="QueryPassCapEventInfoRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QueryPassCapEventInfoRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="QueryPassCapEventInfoResultMsssage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QueryPassCapEventInfoResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="QuerySubCallScreenNoRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QuerySubCallScreenNoRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="QuerySubCallScreenNoResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QuerySubCallScreenNoResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="ChangeCustBasicInforRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ChangeCustBasicInforRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="ChangeCustBasicInforResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ChangeCustBasicInforResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="SuspendRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:SuspendRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="SuspendResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:SuspendResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="DeleteRechageBlackRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:DeleteRechageBlackRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="DeleteRechageBlackResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:DeleteRechageBlackResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="ChangeMainProdRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ChangeMainProdRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="ChangeMainProdResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ChangeMainProdResultMsg" />
+	</wsdl:message>
+	<wsdl:message
+		name="UpdateSubscriberSegmentationRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:UpdateSubscriberSegmentationRequestMsg" />
+	</wsdl:message>
+	<wsdl:message
+		name="UpdateSubscriberSegmentationResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:UpdateSubscriberSegmentationResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="ChangePasswordRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ChangePasswordRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="ChangePasswordResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ChangePasswordResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="ChangeSubLowBalPrtRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ChangeSubLowBalPrtRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="ChangeSubLowBalPrtResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ChangeSubLowBalPrtResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="QuerySubscribedGroupRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QuerySubscribedGroupRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="QuerySubscribedGroupResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QuerySubscribedGroupResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="BatchSubscribeAppProductRequestMsg">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:BatchSubscribeAppProductRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="BatchSubscribeAppProductResultMsg">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:BatchSubscribeAppProductResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="ChangeOwnerRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ChangeOwnerRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="ChangeOwnerResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ChangeOwnerResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="QuerySubFamilyNoRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QuerySubFamilyNoRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="QuerySubFamilyNoResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QuerySubFamilyNoResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="ManParentChildRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ManParentChildRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="ManParentChildResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ManParentChildResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="ReNewSubscriberRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ReNewSubscriberRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="ReNewSubscriberResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ReNewSubscriberResultMsg" />
+	</wsdl:message>
+	<wsdl:message
+		name="ModifySubscriberValidityRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ModifySubscriberValidityRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="ModifySubscriberValidityResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ModifySubscriberValidityResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="BatchOperationRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:BatchOperationRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="BatchOperationResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:BatchOperationResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="QueryPromotionPlanRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QueryPromotionPlanRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="QueryPromotionPlanResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QueryPromotionPlanResultMsg" />
+	</wsdl:message>
+	<wsdl:message
+		name="ChangeSubscriberBasicInforRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ChangeSubscriberBasicInforRequestMsg" />
+	</wsdl:message>
+	<wsdl:message
+		name="ChangeSubscriberBasicInforResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ChangeSubscriberBasicInforResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="ChangeMSISDNRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ChangeMSISDNRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="ChangeMSISDNResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ChangeMSISDNResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="QueryGroupMemberRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QueryGroupMemberRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="QueryGroupMemberResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QueryGroupMemberResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="QueryCUGTypeRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QueryCUGTypeRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="QueryCUGTypeResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QueryCUGTypeResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="ModifySubscriberStateRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ModifySubscriberStateRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="ModifySubscriberStateResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ModifySubscriberStateResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="DeleteSubscriberExtRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:DeleteSubscriberExtRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="DeleteSubscriberExtResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:DeleteSubscriberExtResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="CheckPasswordRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:CheckPasswordRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="CheckPasswordResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:CheckPasswordResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="DeleteSubscriberRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:DeleteSubscriberRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="DeleteSubscriberResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:DeleteSubscriberResultMsg" />
+	</wsdl:message>
+	<wsdl:message
+		name="QuerySubscriberServiceInfoRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QuerySubscriberServiceInfoRequestMsg" />
+	</wsdl:message>
+	<wsdl:message
+		name="QuerySubscriberServiceInfoResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QuerySubscriberServiceInfoResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="QueryChildLimitRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QueryChildLimitRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="QueryChildLimitResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QueryChildLimitResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="QueryBasicInfoRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QueryBasicInfoRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="QueryBasicInfoResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QueryBasicInfoResultMsg" />
+	</wsdl:message>
+	<wsdl:message
+		name="QuerySubscriberProductInfoRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QuerySubscriberProductInfoRequestMsg" />
+	</wsdl:message>
+	<wsdl:message
+		name="QuerySubscriberProductInfoResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QuerySubscriberProductInfoResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="QueryInterActLogRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QueryInterActLogRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="QueryInterActLogResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QueryInterActLogResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="ReconnectRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ReconnectRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="ReconnectResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ReconnectResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="QueryCUGMembersRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QueryCUGMembersRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="QueryCUGMembersResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QueryCUGMembersResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="BlockSubscriberRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:BlockSubscriberRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="BlockSubscriberResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:BlockSubscriberResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="ResetPasswordRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ResetPasswordRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="ResetPasswordResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ResetPasswordResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="CheckUVCPartPinRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:CheckUVCPartPinRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="CheckUVCPartPinResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:CheckUVCPartPinResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="QuerySubChangeLogRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QuerySubChangeLogRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="QuerySubChangeLogResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:QuerySubChangeLogResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="ChangeAccountBasicInforRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ChangeAccountBasicInforRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="ChangeAccountBasicInforResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ChangeAccountBasicInforResultMsg" />
+	</wsdl:message>
+	<wsdl:message
+		name="UnSubscribeAppendantProductRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:UnSubscribeAppendantProductRequestMsg" />
+	</wsdl:message>
+	<wsdl:message
+		name="UnSubscribeAppendantProductResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:UnSubscribeAppendantProductResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="SynDTDiscountRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:SynDTDiscountRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="SynDTDiscountResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:SynDTDiscountResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="NewSubscriberRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:NewSubscriberRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="NewSubscriberResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:NewSubscriberResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="ChangeCreditLevelRequestMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ChangeCreditLevelRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="ChangeCreditLevelResultMessage">
+		<wsdl:part name="part1"
+			element="businessmgrmsg:ChangeCreditLevelResultMsg" />
+	</wsdl:message>
+	<wsdl:portType
+		name="CBSInterfaceBusinessMgrServicePortType">
+		<wsdl:operation name="DisclaimMissing">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:DisclaimMissingRequestMessage"
+				wsaw:Action="DisclaimMissing" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:DisclaimMissingResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/DisclaimMissingResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="ChangeAppendantProduct">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ChangeAppendantProductRequestMessage"
+				wsaw:Action="ChangeAppendantProduct" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ChangeAppendantProductResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ChangeAppendantProductResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="ManSubFamilyNo">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ManSubFamilyNoRequestMessage"
+				wsaw:Action="ManSubFamilyNo" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ManSubFamilyNoResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ManSubFamilyNoResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="QueryLanguageInf">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QueryLanguageInfRequestMessage"
+				wsaw:Action="QueryLanguageInf" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QueryLanguageInfResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QueryLanguageInfResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="ChangeServices">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ChangeServicesRequestMessage"
+				wsaw:Action="ChangeServices" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ChangeServicesResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ChangeServicesResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="ModifyPosUserState">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ModifyPosUserStateRequestMessage"
+				wsaw:Action="ModifyPosUserState" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ModifyPosUserStateResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ModifyPosUserStateResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="ManCUGInfo">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ManCUGInfoRequestMessage" wsaw:Action="ManCUGInfo" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ManCUGInfoResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ManCUGInfoResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="IntegrationEnquiry">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:IntegrationEnquiryRequestMessage"
+				wsaw:Action="IntegrationEnquiry" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:IntegrationEnquiryResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/IntegrationEnquiryResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="QueryDefinedZonesInfo">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QueryDefinedZonesInfoRequestMessage"
+				wsaw:Action="QueryDefinedZonesInfo" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QueryDefinedZonesInfoResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QueryDefinedZonesInfoResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="ManSubCallScreenNo">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ManSubCallScreenNoRequestMessage"
+				wsaw:Action="ManSubCallScreenNo" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ManSubCallScreenNoResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ManSubCallScreenNoResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="QueryUserGroup">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QueryUserGroupRequestMessage"
+				wsaw:Action="QueryUserGroup" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QueryUserGroupResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QueryUserGroupResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="QueryAccumulatedPassInfo">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QueryAccumulatedPassInfoRequestMessage"
+				wsaw:Action="QueryAccumulatedPassInfo" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QueryAccumulatedPassInfoResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QueryAccumulatedPassInfoResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="QueryAdjustValidityLog">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QueryAdjustValidityLogRequestMessage"
+				wsaw:Action="QueryAdjustValidityLog" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QueryAdjustValidityLogResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QueryAdjustValidityLogResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="ModifyCFNo">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ModifyCFNoRequestMessage" wsaw:Action="ModifyCFNo" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ModifyCFNoResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ModifyCFNoResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="UpdateCUGList">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:UpdateCUGListRequestMessage"
+				wsaw:Action="UpdateCUGList" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:UpdateCUGListResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/UpdateCUGListResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="QuerySubHomeZone">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QuerySubHomeZoneRequestMessage"
+				wsaw:Action="QuerySubHomeZone" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QuerySubHomeZoneResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QuerySubHomeZoneResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="UnSubscribeAppendantProductExt">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:UnSubscribeAppendantProductExtRequestMessage"
+				wsaw:Action="UnSubscribeAppendantProductExt" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:UnSubscribeAppendantProductExtResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/UnSubscribeAppendantProductExtResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="QueryPassInfo">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QueryPassInfoRequestMessage"
+				wsaw:Action="QueryPassInfo" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QueryPassInfoResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QueryPassInfoResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="CheckOperatorPassword">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:CheckOperatorPasswordRequestMessage"
+				wsaw:Action="CheckOperatorPassword" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:CheckOperatorPasswordResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/CheckOperatorPasswordResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="NewSubscriberExt">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:NewSubscriberExtRequestMessage"
+				wsaw:Action="NewSubscriberExt" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:NewSubscriberExtResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/NewSubscriberExtResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="ManSubHomeZone">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ManSubHomeZoneRequestMessage"
+				wsaw:Action="ManSubHomeZone" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ManSubHomeZoneResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ManSubHomeZoneResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="BindProductSubscriberNo">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:BindProductSubscriberNoRequestMessage"
+				wsaw:Action="BindProductSubscriberNo" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:BindProductSubscriberNoResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/BindProductSubscriberNoResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="ClaimMissing">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ClaimMissingRequestMessage"
+				wsaw:Action="ClaimMissing" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ClaimMissingResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ClaimMissingResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="ChangeSIM">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ChangeSIMRequestMessage" wsaw:Action="ChangeSIM" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ChangeSIMResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ChangeSIMResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="ManGroupMember">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ManGroupMemberRequestMessage"
+				wsaw:Action="ManGroupMember" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ManGroupMemberResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ManGroupMemberResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="QuerySubLowBalPrt">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QuerySubLowBalPrtRequestMessage"
+				wsaw:Action="QuerySubLowBalPrt" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QuerySubLowBalPrtResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QuerySubLowBalPrtResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="SubscribeAppendantProduct">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:SubscribeAppendantProductRequestMessage"
+				wsaw:Action="SubscribeAppendantProduct" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:SubscribeAppendantProductResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/SubscribeAppendantProductResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="ManPromotionPlan">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ManPromotionPlanRequestMessage"
+				wsaw:Action="ManPromotionPlan" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ManPromotionPlanResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ManPromotionPlanResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="QueryPassCapEventInfo">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QueryPassCapEventInfoRequestMessage"
+				wsaw:Action="QueryPassCapEventInfo" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QueryPassCapEventInfoResultMsssage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QueryPassCapEventInfoResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="QuerySubCallScreenNo">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QuerySubCallScreenNoRequestMessage"
+				wsaw:Action="QuerySubCallScreenNo" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QuerySubCallScreenNoResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QuerySubCallScreenNoResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="ChangeCustBasicInfor">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ChangeCustBasicInforRequestMessage"
+				wsaw:Action="ChangeCustBasicInfor" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ChangeCustBasicInforResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ChangeCustBasicInforResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="Suspend">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:SuspendRequestMessage" wsaw:Action="Suspend" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:SuspendResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/SuspendResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="DeleteRechageBlack">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:DeleteRechageBlackRequestMessage"
+				wsaw:Action="DeleteRechageBlack" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:DeleteRechageBlackResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/DeleteRechageBlackResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="ChangeMainProd">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ChangeMainProdRequestMessage"
+				wsaw:Action="ChangeMainProd" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ChangeMainProdResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ChangeMainProdResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="UpdateSubscriberSegmentation">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:UpdateSubscriberSegmentationRequestMessage"
+				wsaw:Action="UpdateSubscriberSegmentation" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:UpdateSubscriberSegmentationResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/UpdateSubscriberSegmentationResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="ChangePassword">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ChangePasswordRequestMessage"
+				wsaw:Action="ChangePassword" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ChangePasswordResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ChangePasswordResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="ChangeSubLowBalPrt">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ChangeSubLowBalPrtRequestMessage"
+				wsaw:Action="ChangeSubLowBalPrt" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ChangeSubLowBalPrtResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ChangeSubLowBalPrtResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="QuerySubscribedGroup">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QuerySubscribedGroupRequestMessage"
+				wsaw:Action="QuerySubscribedGroup" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QuerySubscribedGroupResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QuerySubscribedGroupResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="BatchSubscribeAppProduct">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:BatchSubscribeAppProductRequestMsg"
+				wsaw:Action="BatchSubscribeAppProduct" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:BatchSubscribeAppProductResultMsg"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/BatchSubscribeAppProductResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="ChangeOwner">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ChangeOwnerRequestMessage"
+				wsaw:Action="ChangeOwner" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ChangeOwnerResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ChangeOwnerResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="QuerySubFamilyNo">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QuerySubFamilyNoRequestMessage"
+				wsaw:Action="QuerySubFamilyNo" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QuerySubFamilyNoResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QuerySubFamilyNoResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="ManParentChild">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ManParentChildRequestMessage"
+				wsaw:Action="ManParentChild" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ManParentChildResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ManParentChildResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="ReNewSubscriber">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ReNewSubscriberRequestMessage"
+				wsaw:Action="ReNewSubscriber" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ReNewSubscriberResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ReNewSubscriberResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="ModifySubscriberValidity">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ModifySubscriberValidityRequestMessage"
+				wsaw:Action="ModifySubscriberValidity" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ModifySubscriberValidityResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ModifySubscriberValidityResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="BatchOperation">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:BatchOperationRequestMessage"
+				wsaw:Action="BatchOperation" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:BatchOperationResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/BatchOperationResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="QueryPromotionPlan">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QueryPromotionPlanRequestMessage"
+				wsaw:Action="QueryPromotionPlan" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QueryPromotionPlanResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QueryPromotionPlanResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="ChangeSubscriberBasicInfor">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ChangeSubscriberBasicInforRequestMessage"
+				wsaw:Action="ChangeSubscriberBasicInfor" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ChangeSubscriberBasicInforResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ChangeSubscriberBasicInforResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="ChangeMSISDN">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ChangeMSISDNRequestMessage"
+				wsaw:Action="ChangeMSISDN" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ChangeMSISDNResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ChangeMSISDNResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="QueryGroupMember">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QueryGroupMemberRequestMessage"
+				wsaw:Action="QueryGroupMember" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QueryGroupMemberResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QueryGroupMemberResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="QueryCUGType">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QueryCUGTypeRequestMessage"
+				wsaw:Action="QueryCUGType" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QueryCUGTypeResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QueryCUGTypeResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="ModifySubscriberState">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ModifySubscriberStateRequestMessage"
+				wsaw:Action="ModifySubscriberState" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ModifySubscriberStateResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ModifySubscriberStateResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="DeleteSubscriberExt">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:DeleteSubscriberExtRequestMessage"
+				wsaw:Action="DeleteSubscriberExt" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:DeleteSubscriberExtResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/DeleteSubscriberExtResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="CheckPassword">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:CheckPasswordRequestMessage"
+				wsaw:Action="CheckPassword" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:CheckPasswordResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/CheckPasswordResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="DeleteSubscriber">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:DeleteSubscriberRequestMessage"
+				wsaw:Action="DeleteSubscriber" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:DeleteSubscriberResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/DeleteSubscriberResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="QuerySubscriberServiceInfo">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QuerySubscriberServiceInfoRequestMessage"
+				wsaw:Action="QuerySubscriberServiceInfo" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QuerySubscriberServiceInfoResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QuerySubscriberServiceInfoResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="QueryChildLimit">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QueryChildLimitRequestMessage"
+				wsaw:Action="QueryChildLimit" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QueryChildLimitResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QueryChildLimitResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="QueryBasicInfo">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QueryBasicInfoRequestMessage"
+				wsaw:Action="QueryBasicInfo" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QueryBasicInfoResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QueryBasicInfoResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="QuerySubscriberProductInfo">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QuerySubscriberProductInfoRequestMessage"
+				wsaw:Action="QuerySubscriberProductInfo" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QuerySubscriberProductInfoResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QuerySubscriberProductInfoResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="QueryInterActLog">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QueryInterActLogRequestMessage"
+				wsaw:Action="QueryInterActLog" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QueryInterActLogResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QueryInterActLogResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="Reconnect">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ReconnectRequestMessage" wsaw:Action="Reconnect" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ReconnectResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ReconnectResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="QueryCUGMembers">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QueryCUGMembersRequestMessage"
+				wsaw:Action="QueryCUGMembers" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QueryCUGMembersResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QueryCUGMembersResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="BlockSubscriber">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:BlockSubscriberRequestMessage"
+				wsaw:Action="BlockSubscriber" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:BlockSubscriberResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/BlockSubscriberResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="ResetPassword">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ResetPasswordRequestMessage"
+				wsaw:Action="ResetPassword" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ResetPasswordResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ResetPasswordResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="CheckUVCPartPin">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:CheckUVCPartPinRequestMessage"
+				wsaw:Action="CheckUVCPartPin" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:CheckUVCPartPinResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/CheckUVCPartPinResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="QuerySubChangeLog">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QuerySubChangeLogRequestMessage"
+				wsaw:Action="QuerySubChangeLog" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:QuerySubChangeLogResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QuerySubChangeLogResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="ChangeAccountBasicInfor">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ChangeAccountBasicInforRequestMessage"
+				wsaw:Action="ChangeAccountBasicInfor" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ChangeAccountBasicInforResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ChangeAccountBasicInforResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="UnSubscribeAppendantProduct">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:UnSubscribeAppendantProductRequestMessage"
+				wsaw:Action="UnSubscribeAppendantProduct" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:UnSubscribeAppendantProductResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/UnSubscribeAppendantProductResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="SynDTDiscount">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:SynDTDiscountRequestMessage"
+				wsaw:Action="SynDTDiscount" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:SynDTDiscountResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/SynDTDiscountResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="NewSubscriber">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:NewSubscriberRequestMessage"
+				wsaw:Action="NewSubscriber" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:NewSubscriberResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/NewSubscriberResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="ChangeCreditLevel">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ChangeCreditLevelRequestMessage"
+				wsaw:Action="ChangeCreditLevel" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="business:ChangeCreditLevelResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ChangeCreditLevelResponse" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding
+		name="CBSInterfaceBusinessMgrServiceSOAP11Binding"
+		type="business:CBSInterfaceBusinessMgrServicePortType">
+		<soap:binding
+			transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+		<wsdl:operation name="DisclaimMissing">
+			<soap:operation soapAction="DisclaimMissing"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ChangeAppendantProduct">
+			<soap:operation soapAction="ChangeAppendantProduct"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ManSubFamilyNo">
+			<soap:operation soapAction="ManSubFamilyNo"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QueryLanguageInf">
+			<soap:operation soapAction="QueryLanguageInf"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ChangeServices">
+			<soap:operation soapAction="ChangeServices"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ModifyPosUserState">
+			<soap:operation soapAction="ModifyPosUserState"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ManCUGInfo">
+			<soap:operation soapAction="ManCUGInfo"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="IntegrationEnquiry">
+			<soap:operation soapAction="IntegrationEnquiry"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QueryDefinedZonesInfo">
+			<soap:operation soapAction="QueryDefinedZonesInfo"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ManSubCallScreenNo">
+			<soap:operation soapAction="ManSubCallScreenNo"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QueryUserGroup">
+			<soap:operation soapAction="QueryUserGroup"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QueryAccumulatedPassInfo">
+			<soap:operation soapAction="QueryAccumulatedPassInfo"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QueryAdjustValidityLog">
+			<soap:operation soapAction="QueryAdjustValidityLog"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ModifyCFNo">
+			<soap:operation soapAction="ModifyCFNo"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateCUGList">
+			<soap:operation soapAction="UpdateCUGList"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QuerySubHomeZone">
+			<soap:operation soapAction="QuerySubHomeZone"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="UnSubscribeAppendantProductExt">
+			<soap:operation
+				soapAction="UnSubscribeAppendantProductExt" style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QueryPassInfo">
+			<soap:operation soapAction="QueryPassInfo"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="CheckOperatorPassword">
+			<soap:operation soapAction="CheckOperatorPassword"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="NewSubscriberExt">
+			<soap:operation soapAction="NewSubscriberExt"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ManSubHomeZone">
+			<soap:operation soapAction="ManSubHomeZone"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="BindProductSubscriberNo">
+			<soap:operation soapAction="BindProductSubscriberNo"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ClaimMissing">
+			<soap:operation soapAction="ClaimMissing"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ChangeSIM">
+			<soap:operation soapAction="ChangeSIM"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ManGroupMember">
+			<soap:operation soapAction="ManGroupMember"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QuerySubLowBalPrt">
+			<soap:operation soapAction="QuerySubLowBalPrt"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="SubscribeAppendantProduct">
+			<soap:operation soapAction="SubscribeAppendantProduct"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ManPromotionPlan">
+			<soap:operation soapAction="ManPromotionPlan"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QueryPassCapEventInfo">
+			<soap:operation soapAction="QueryPassCapEventInfo"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QuerySubCallScreenNo">
+			<soap:operation soapAction="QuerySubCallScreenNo"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ChangeCustBasicInfor">
+			<soap:operation soapAction="ChangeCustBasicInfor"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Suspend">
+			<soap:operation soapAction="Suspend" style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteRechageBlack">
+			<soap:operation soapAction="DeleteRechageBlack"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ChangeMainProd">
+			<soap:operation soapAction="ChangeMainProd"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateSubscriberSegmentation">
+			<soap:operation
+				soapAction="UpdateSubscriberSegmentation" style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ChangePassword">
+			<soap:operation soapAction="ChangePassword"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ChangeSubLowBalPrt">
+			<soap:operation soapAction="ChangeSubLowBalPrt"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QuerySubscribedGroup">
+			<soap:operation soapAction="QuerySubscribedGroup"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="BatchSubscribeAppProduct">
+			<soap:operation soapAction="BatchSubscribeAppProduct"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ChangeOwner">
+			<soap:operation soapAction="ChangeOwner"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QuerySubFamilyNo">
+			<soap:operation soapAction="QuerySubFamilyNo"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ManParentChild">
+			<soap:operation soapAction="ManParentChild"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ReNewSubscriber">
+			<soap:operation soapAction="ReNewSubscriber"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ModifySubscriberValidity">
+			<soap:operation soapAction="ModifySubscriberValidity"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="BatchOperation">
+			<soap:operation soapAction="BatchOperation"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QueryPromotionPlan">
+			<soap:operation soapAction="QueryPromotionPlan"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ChangeSubscriberBasicInfor">
+			<soap:operation
+				soapAction="ChangeSubscriberBasicInfor" style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ChangeMSISDN">
+			<soap:operation soapAction="ChangeMSISDN"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QueryGroupMember">
+			<soap:operation soapAction="QueryGroupMember"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QueryCUGType">
+			<soap:operation soapAction="QueryCUGType"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ModifySubscriberState">
+			<soap:operation soapAction="ModifySubscriberState"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteSubscriberExt">
+			<soap:operation soapAction="DeleteSubscriberExt"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="CheckPassword">
+			<soap:operation soapAction="CheckPassword"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteSubscriber">
+			<soap:operation soapAction="DeleteSubscriber"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QuerySubscriberServiceInfo">
+			<soap:operation
+				soapAction="QuerySubscriberServiceInfo" style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QueryChildLimit">
+			<soap:operation soapAction="QueryChildLimit"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QueryBasicInfo">
+			<soap:operation soapAction="QueryBasicInfo"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QuerySubscriberProductInfo">
+			<soap:operation
+				soapAction="QuerySubscriberProductInfo" style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QueryInterActLog">
+			<soap:operation soapAction="QueryInterActLog"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Reconnect">
+			<soap:operation soapAction="Reconnect"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QueryCUGMembers">
+			<soap:operation soapAction="QueryCUGMembers"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="BlockSubscriber">
+			<soap:operation soapAction="BlockSubscriber"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ResetPassword">
+			<soap:operation soapAction="ResetPassword"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="CheckUVCPartPin">
+			<soap:operation soapAction="CheckUVCPartPin"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QuerySubChangeLog">
+			<soap:operation soapAction="QuerySubChangeLog"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ChangeAccountBasicInfor">
+			<soap:operation soapAction="ChangeAccountBasicInfor"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="UnSubscribeAppendantProduct">
+			<soap:operation
+				soapAction="UnSubscribeAppendantProduct" style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="SynDTDiscount">
+			<soap:operation soapAction="SynDTDiscount"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="NewSubscriber">
+			<soap:operation soapAction="NewSubscriber"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ChangeCreditLevel">
+			<soap:operation soapAction="ChangeCreditLevel"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding
+		name="CBSInterfaceBusinessMgrServiceSOAP12Binding"
+		type="business:CBSInterfaceBusinessMgrServicePortType">
+		<soap12:binding
+			transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+		<wsdl:operation name="DisclaimMissing">
+			<soap12:operation soapAction="DisclaimMissing"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ChangeAppendantProduct">
+			<soap12:operation
+				soapAction="ChangeAppendantProduct" style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ManSubFamilyNo">
+			<soap12:operation soapAction="ManSubFamilyNo"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QueryLanguageInf">
+			<soap12:operation soapAction="QueryLanguageInf"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ChangeServices">
+			<soap12:operation soapAction="ChangeServices"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ModifyPosUserState">
+			<soap12:operation soapAction="ModifyPosUserState"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ManCUGInfo">
+			<soap12:operation soapAction="ManCUGInfo"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="IntegrationEnquiry">
+			<soap12:operation soapAction="IntegrationEnquiry"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QueryDefinedZonesInfo">
+			<soap12:operation soapAction="QueryDefinedZonesInfo"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ManSubCallScreenNo">
+			<soap12:operation soapAction="ManSubCallScreenNo"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QueryUserGroup">
+			<soap12:operation soapAction="QueryUserGroup"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QueryAccumulatedPassInfo">
+			<soap12:operation
+				soapAction="QueryAccumulatedPassInfo" style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QueryAdjustValidityLog">
+			<soap12:operation
+				soapAction="QueryAdjustValidityLog" style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ModifyCFNo">
+			<soap12:operation soapAction="ModifyCFNo"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateCUGList">
+			<soap12:operation soapAction="UpdateCUGList"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QuerySubHomeZone">
+			<soap12:operation soapAction="QuerySubHomeZone"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="UnSubscribeAppendantProductExt">
+			<soap12:operation
+				soapAction="UnSubscribeAppendantProductExt" style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QueryPassInfo">
+			<soap12:operation soapAction="QueryPassInfo"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="CheckOperatorPassword">
+			<soap12:operation soapAction="CheckOperatorPassword"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="NewSubscriberExt">
+			<soap12:operation soapAction="NewSubscriberExt"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ManSubHomeZone">
+			<soap12:operation soapAction="ManSubHomeZone"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="BindProductSubscriberNo">
+			<soap12:operation
+				soapAction="BindProductSubscriberNo" style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ClaimMissing">
+			<soap12:operation soapAction="ClaimMissing"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ChangeSIM">
+			<soap12:operation soapAction="ChangeSIM"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ManGroupMember">
+			<soap12:operation soapAction="ManGroupMember"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QuerySubLowBalPrt">
+			<soap12:operation soapAction="QuerySubLowBalPrt"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="SubscribeAppendantProduct">
+			<soap12:operation
+				soapAction="SubscribeAppendantProduct" style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ManPromotionPlan">
+			<soap12:operation soapAction="ManPromotionPlan"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QueryPassCapEventInfo">
+			<soap12:operation soapAction="QueryPassCapEventInfo"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QuerySubCallScreenNo">
+			<soap12:operation soapAction="QuerySubCallScreenNo"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ChangeCustBasicInfor">
+			<soap12:operation soapAction="ChangeCustBasicInfor"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Suspend">
+			<soap12:operation soapAction="Suspend"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteRechageBlack">
+			<soap12:operation soapAction="DeleteRechageBlack"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ChangeMainProd">
+			<soap12:operation soapAction="ChangeMainProd"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateSubscriberSegmentation">
+			<soap12:operation
+				soapAction="UpdateSubscriberSegmentation" style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ChangePassword">
+			<soap12:operation soapAction="ChangePassword"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ChangeSubLowBalPrt">
+			<soap12:operation soapAction="ChangeSubLowBalPrt"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QuerySubscribedGroup">
+			<soap12:operation soapAction="QuerySubscribedGroup"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="BatchSubscribeAppProduct">
+			<soap12:operation
+				soapAction="BatchSubscribeAppProduct" style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ChangeOwner">
+			<soap12:operation soapAction="ChangeOwner"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QuerySubFamilyNo">
+			<soap12:operation soapAction="QuerySubFamilyNo"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ManParentChild">
+			<soap12:operation soapAction="ManParentChild"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ReNewSubscriber">
+			<soap12:operation soapAction="ReNewSubscriber"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ModifySubscriberValidity">
+			<soap12:operation
+				soapAction="ModifySubscriberValidity" style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="BatchOperation">
+			<soap12:operation soapAction="BatchOperation"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QueryPromotionPlan">
+			<soap12:operation soapAction="QueryPromotionPlan"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ChangeSubscriberBasicInfor">
+			<soap12:operation
+				soapAction="ChangeSubscriberBasicInfor" style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ChangeMSISDN">
+			<soap12:operation soapAction="ChangeMSISDN"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QueryGroupMember">
+			<soap12:operation soapAction="QueryGroupMember"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QueryCUGType">
+			<soap12:operation soapAction="QueryCUGType"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ModifySubscriberState">
+			<soap12:operation soapAction="ModifySubscriberState"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteSubscriberExt">
+			<soap12:operation soapAction="DeleteSubscriberExt"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="CheckPassword">
+			<soap12:operation soapAction="CheckPassword"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteSubscriber">
+			<soap12:operation soapAction="DeleteSubscriber"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QuerySubscriberServiceInfo">
+			<soap12:operation
+				soapAction="QuerySubscriberServiceInfo" style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QueryChildLimit">
+			<soap12:operation soapAction="QueryChildLimit"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QueryBasicInfo">
+			<soap12:operation soapAction="QueryBasicInfo"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QuerySubscriberProductInfo">
+			<soap12:operation
+				soapAction="QuerySubscriberProductInfo" style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QueryInterActLog">
+			<soap12:operation soapAction="QueryInterActLog"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Reconnect">
+			<soap12:operation soapAction="Reconnect"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QueryCUGMembers">
+			<soap12:operation soapAction="QueryCUGMembers"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="BlockSubscriber">
+			<soap12:operation soapAction="BlockSubscriber"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ResetPassword">
+			<soap12:operation soapAction="ResetPassword"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="CheckUVCPartPin">
+			<soap12:operation soapAction="CheckUVCPartPin"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QuerySubChangeLog">
+			<soap12:operation soapAction="QuerySubChangeLog"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ChangeAccountBasicInfor">
+			<soap12:operation
+				soapAction="ChangeAccountBasicInfor" style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="UnSubscribeAppendantProduct">
+			<soap12:operation
+				soapAction="UnSubscribeAppendantProduct" style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="SynDTDiscount">
+			<soap12:operation soapAction="SynDTDiscount"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="NewSubscriber">
+			<soap12:operation soapAction="NewSubscriber"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ChangeCreditLevel">
+			<soap12:operation soapAction="ChangeCreditLevel"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="CBSInterfaceBusinessMgrService">
+		<wsdl:port
+			name="CBSInterfaceBusinessMgrServiceSOAP11port_http"
+			binding="business:CBSInterfaceBusinessMgrServiceSOAP11Binding">
+			<soap:address
+				location="http://www.huawei.com/bme/cbsinterface/businessmgr/wsdl/CBSInterface_BusinessMgr.wsdl" />
+		</wsdl:port>
+		<wsdl:port
+			name="CBSInterfaceBusinessMgrServiceSOAP12port_http"
+			binding="business:CBSInterfaceBusinessMgrServiceSOAP12Binding">
+			<soap12:address
+				location="http://www.huawei.com/bme/cbsinterface/businessmgr/wsdl/CBSInterface_BusinessMgr.wsdl" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

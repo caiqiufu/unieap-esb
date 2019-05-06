@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:uvcheader="http://www.huawei.com/bme/cbsinterface/uvcheader" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:header="http://www.huawei.com/bme/cbsinterface/header" xmlns:uvccommon="http://www.huawei.com/bme/cbsinterface/uvccommon" targetNamespace="http://www.huawei.com/bme/cbsinterface/uvccommon" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <xs:complexType name="BatchListType">
+        <xs:sequence>
+            <xs:element name="BatchID" type="xs:string" minOccurs="0"/>
+            <xs:element name="StartSerialNo" type="xs:string" minOccurs="0"/>
+            <xs:element name="StopSerialNo" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="FailListType">
+        <xs:sequence>
+            <xs:element name="FailNum" type="xs:int" minOccurs="0"/>
+            <xs:element name="FailFile" type="xs:string" minOccurs="0"/>
+            <xs:element name="FailSeqList" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="SuccessListType">
+        <xs:sequence>
+            <xs:element name="SuccessNum" type="xs:int" minOccurs="0"/>
+            <xs:element name="SuccessFile" type="xs:string" minOccurs="0"/>
+            <xs:element name="SuccessSeqList" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="VoucherAttrType">
+        <xs:sequence>
+            <xs:element name="SeqLength" type="xs:int"/>
+            <xs:element name="FaceValue" type="xs:int"/>
+            <xs:element name="CurrencyType" type="xs:int"/>
+            <xs:element name="CardType" type="xs:int"/>
+            <xs:element name="CardStopDate" type="xs:string"/>
+            <xs:element name="Prolongdays" type="xs:int" minOccurs="0"/>
+            <xs:element name="Cardmanufacturer" type="xs:string"/>
+            <xs:element name="PinLength" type="xs:string"/>
+            <xs:element name="CardBEID" type="xs:int" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="VoucherMakingType">
+        <xs:sequence>
+            <xs:element name="FaceValue" type="xs:int" minOccurs="0"/>
+            <xs:element name="CardmakingFile" type="xs:string" minOccurs="0"/>
+            <xs:element name="Cardmanufacturer" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="RechargeResouceType">
+        <xs:sequence>
+            <xs:element name="ResId" type="xs:int" minOccurs="0"/>
+            <xs:element name="ResLeft" type="xs:int" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="SimpleVoucherOperationType">
+        <xs:sequence>
+            <xs:element name="OperationType" type="xs:string" minOccurs="0"/>
+            <xs:element name="OperationDate" type="xs:string" minOccurs="0"/>
+            <xs:element name="OperationReason" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="VoucherOperationType">
+        <xs:sequence>
+            <xs:element name="StartSerialNo" type="xs:string" minOccurs="0"/>
+            <xs:element name="StopSerialNo" type="xs:string" minOccurs="0"/>
+            <xs:element name="Operator" type="xs:string" minOccurs="0"/>
+            <xs:element name="OperationTime" type="xs:string" minOccurs="0"/>
+            <xs:element name="CardTotal" type="xs:int" minOccurs="0"/>
+            <xs:element name="OperationType" type="xs:string" minOccurs="0"/>
+            <xs:element name="TaskID" type="xs:string" minOccurs="0"/>
+            <xs:element name="SuccessTotal" type="xs:int" minOccurs="0"/>
+            <xs:element name="BatchID" type="xs:string" minOccurs="0"/>
+            <xs:element name="OperationReason" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="VoucherInfoType">
+        <xs:sequence>
+            <xs:element name="BatchID" type="xs:string" minOccurs="0"/>
+            <xs:element name="SerialNo" type="xs:string" minOccurs="0"/>
+            <xs:element name="FaceValue" type="xs:int" minOccurs="0"/>
+            <xs:element name="Currency" type="xs:int" minOccurs="0"/>
+            <xs:element name="CardStartDate" type="xs:string" minOccurs="0"/>
+            <xs:element name="CardStopDate" type="xs:string" minOccurs="0"/>
+            <xs:element name="HotCardFlag" type="xs:int" minOccurs="0"/>
+            <xs:element name="CurDistributor" type="xs:string" minOccurs="0"/>
+            <xs:element name="TradeTime" type="xs:string" minOccurs="0"/>
+            <xs:element name="RechargeNumber" type="xs:string" minOccurs="0"/>
+            <xs:element name="CardCosID" type="xs:string" minOccurs="0"/>
+            <xs:element name="CardCosName" type="xs:string" minOccurs="0"/>
+            <xs:element name="CallingNumber" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="TaskParametersType">
+        <xs:sequence>
+            <xs:element name="BatchID" type="xs:string" minOccurs="0"/>
+            <xs:element name="StartSerialNo" type="xs:string" minOccurs="0"/>
+            <xs:element name="StopSerialNo" type="xs:string" minOccurs="0"/>
+            <xs:element name="RandomListFile" type="xs:string" minOccurs="0"/>
+            <xs:element name="NewStopDate" type="xs:string" minOccurs="0"/>
+            <xs:element name="CardBEID" type="xs:int" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="TaskListType">
+        <xs:sequence>
+            <xs:element name="TaskID" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="RechargeNumberType">
+        <xs:sequence>
+            <xs:element name="RechargeNumber" type="xs:string"/>
+            <xs:element name="TenantID" type="xs:int" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="PINType">
+        <xs:sequence>
+            <xs:element name="AccountNumber" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

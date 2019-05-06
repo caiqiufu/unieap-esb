@@ -1,0 +1,13 @@
+##################################################
+server:
+  port: 8100
+  #address: localhost
+  #servlet: 
+  #   context-path: /unieap-esb
+  session-timeout: 30  
+  tomcat.max-threads: 0  
+  tomcat.uri-encoding: UTF-8
+spring:
+  application:
+    name: unieap-esb
+#################################################

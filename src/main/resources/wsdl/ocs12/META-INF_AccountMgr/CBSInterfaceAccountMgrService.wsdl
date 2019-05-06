@@ -1,0 +1,1566 @@
+<wsdl:definitions
+	xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:account="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr"
+	xmlns:accountmgrmsg="http://www.huawei.com/bme/cbsinterface/cbs/accountmgrmsg"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:common="http://www.huawei.com/bme/cbsinterface/common"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	targetNamespace="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr">
+	<wsdl:types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema"
+			attributeFormDefault="unqualified" elementFormDefault="unqualified"
+			targetNamespace="http://www.huawei.com/bme/cbsinterface/common">
+			<xs:include schemaLocation="xsd0.xsd" />
+		</xs:schema>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema"
+			attributeFormDefault="unqualified" elementFormDefault="unqualified"
+			targetNamespace="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr">
+			<xs:include schemaLocation="xsd1.xsd" />
+		</xs:schema>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema"
+			attributeFormDefault="unqualified" elementFormDefault="unqualified"
+			targetNamespace="http://www.huawei.com/bme/cbsinterface/cbs/accountmgrmsg">
+			<xs:import
+				namespace="http://www.huawei.com/bme/cbsinterface/common"
+				schemaLocation="xsd0.xsd" />
+			<xs:import
+				namespace="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr"
+				schemaLocation="xsd1.xsd" />
+			<xs:element name="QueryBalanceRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="QueryBalanceRequest"
+							type="account:QueryBalanceRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QueryBalanceResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="QueryBalanceResult" nillable="true"
+							type="account:QueryBalanceResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="VoucherRechargeRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="VoucherRechargeRequest"
+							type="account:VoucherRechargeRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="VoucherRechargeResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="VoucherRechargeResult"
+							nillable="true" type="account:VoucherRechargeResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="PaymentRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="PaymentRequest"
+							type="account:PaymentRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="PaymentResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="PaymentResult"
+							type="account:PaymentResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ActiveFirstRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="ActiveFirstRequest"
+							type="account:ActiveFirstRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ActiveFirstResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ReversePaymentRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="ReversePaymentRequest"
+							type="account:ReversePaymentRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ReversePaymentResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="ReversePaymentResult"
+							type="account:ReversePaymentResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="AdjustAccountRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="AdjustAccountRequest"
+							type="account:AdjustAccountRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="AdjustAccountResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="AdjustAccountResult" nillable="true"
+							type="account:AdjustAccountResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="VoucherRechargeEnquiryRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="VoucherRechargeEnquiryRequest"
+							type="account:VoucherRechargeEnquiryRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="VoucherRechargeEnquiryResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="VoucherRechargeEnquiryResult"
+							type="account:VoucherRechargeEnquiryResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="TransferAccountRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="TransferAccountRequest"
+							type="account:TransferAccountRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="TransferAccountResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="TransferAccountResult"
+							type="account:TransferAccountResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="PaymentEnquiryRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="PaymentEnquiryRequest"
+							type="account:PaymentEnquiryRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="PaymentEnquiryResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="PaymentEnquiryResult"
+							type="account:PaymentEnquiryResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="CumulateEnquiryRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="CumulateEnquiryRequest"
+							type="account:CumulateEnquiryRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="CumulateEnquiryResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="CumulateEnquiryResult"
+							type="account:CumulateEnquiryResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="VoucherEnquiryBySeqRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="VoucherEnquiryBySeqRequest"
+							type="account:VoucherEnquiryBySeqRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="VoucherEnquiryBySeqResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="VoucherEnquiryBySeqResult"
+							type="account:VoucherEnquiryBySeqResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="VoucherEnquiryByPINRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="VoucherEnquiryByPINRequest"
+							type="account:VoucherEnquiryByPINRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="VoucherEnquiryByPINResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="VoucherEnquiryByPINResult"
+							nillable="true" type="account:VoucherEnquiryByPINResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="OneOffDeductionRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="OneOffDeductionRequest"
+							type="account:OneOffDeductionRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="OneOffDeductionResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="OneOffDeductionResult"
+							nillable="true" type="account:OneOffDeductionResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ServiceHandleFeeRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="ServiceHandleFeeRequest"
+							type="account:ServiceHandleFeeRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ServiceHandleFeeResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="ServiceHandleFeeResult"
+							type="account:ServiceHandleFeeResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QueryTransferLogRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="QueryTransferLogRequest"
+							type="account:QueryTransferLogRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QueryTransferLogResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="QueryTransferLogResult"
+							type="account:QueryTransferLogResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QueryAdjustmentLogRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="QueryAdjustmentLogRequest"
+							type="account:QueryAdjustmentLogRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QueryAdjustmentLogResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="QueryAdjustmentLogResult"
+							type="account:QueryAdjustmentLogResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QueryBonusHistoryRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="QueryBonusHistoryRequest"
+							type="account:QueryBonusHistoryRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QueryBonusHistoryResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="QueryBonusHistoryResult"
+							type="account:QueryBonusHistoryResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ModifyVoucherStateRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="ModifyVoucherStateRequest"
+							type="account:ModifyVoucherStateRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ModifyVoucherStateResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="BalanceToValidityRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="BalanceToValidityRequest"
+							type="account:BalanceToValidityRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="BalanceToValidityResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="BalanceToValidityResult"
+							type="account:BalanceToValidityResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="TransInPpsPosRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="TransInPpsPosRequest"
+							type="account:TransInPpsPosRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="TransInPpsPosResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="TransInPpsPosResult"
+							type="account:TransInPpsPosResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ExchangeAccountRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="ExchangeAccountRequest"
+							type="account:ExchangeAccountRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ExchangeAccountResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="ExchangeAccountResult"
+							type="account:ExchangeAccountResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ModSubBillCycleTypeRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="ModSubBillCycleTypeRequest"
+							type="account:ModSubBillCycleTypeRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ModSubBillCycleTypeResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="AdjustSubAccountRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="AdjustSubAccountRequest"
+							type="account:AdjustSubAccountRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="AdjustSubAccountResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="AdjustSubAccountResult"
+							type="account:AdjustSubAccountResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="SubAccountRechargeRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="SubAccountRechargeRequest"
+							type="account:SubAccountRechargeRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="SubAccountRechargeResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="SubAccountRechargeResult"
+							type="account:SubAccountRechargeResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="VoucherRechargeBySeqRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="VoucherRechargeBySeqRequest"
+							type="account:VoucherRechargeBySeqRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="VoucherRechargeBySeqResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="VoucherRechargeBySeqResult"
+							type="account:VoucherRechargeBySeqResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QueryCallHistoryRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader"
+							type="common:RequestHeader" />
+						<xs:element name="QueryCallHistoryRequest"
+							type="account:QueryCallHistoryRequest" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="QueryCallHistoryResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader"
+							type="common:ResultHeader" />
+						<xs:element name="QueryCallHistoryResult"
+							type="account:QueryCallHistoryResult" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="QueryBonusHistoryRequestMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:QueryBonusHistoryRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="QueryBonusHistoryResultMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:QueryBonusHistoryResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="VoucherRechargeBySeqRequestMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:VoucherRechargeBySeqRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="VoucherRechargeBySeqResultMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:VoucherRechargeBySeqResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="PaymentEnquiryRequestMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:PaymentEnquiryRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="PaymentEnquiryResultMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:PaymentEnquiryResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="TransferAccountRequestMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:TransferAccountRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="TransferAccountResultMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:TransferAccountResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="QueryTransferLogRequestMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:QueryTransferLogRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="QueryTransferLogResultMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:QueryTransferLogResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="ModSubBillCycleTypeRequestMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:ModSubBillCycleTypeRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="ModSubBillCycleTypeResultMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:ModSubBillCycleTypeResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="CumulateEnquiryRequestMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:CumulateEnquiryRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="CumulateEnquiryResultMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:CumulateEnquiryResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="AdjustAccountRequestMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:AdjustAccountRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="AdjustAccountResultMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:AdjustAccountResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="TransInPpsPosRequestMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:TransInPpsPosRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="TransInPpsPosResultMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:TransInPpsPosResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="QueryCallHistoryRequestMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:QueryCallHistoryRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="QueryCallHistoryResultMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:QueryCallHistoryResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="ServiceHandleFeeRequestMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:ServiceHandleFeeRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="ServiceHandleFeeResultMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:ServiceHandleFeeResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="VoucherEnquiryByPINRequestMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:VoucherEnquiryByPINRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="VoucherEnquiryByPINResultMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:VoucherEnquiryByPINResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="QueryBalanceRequestMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:QueryBalanceRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="QueryBalanceResultMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:QueryBalanceResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="SubAccountRechargeRequestMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:SubAccountRechargeRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="SubAccountRechargeResultMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:SubAccountRechargeResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="VoucherRechargeRequestMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:VoucherRechargeRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="VoucherRechargeResultMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:VoucherRechargeResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="BalanceToValidityRequestMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:BalanceToValidityRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="BalanceToValidityResultMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:BalanceToValidityResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="ModifyVoucherStateRequestMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:ModifyVoucherStateRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="ModifyVoucherStateResultMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:ModifyVoucherStateResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="VoucherEnquiryBySeqRequestMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:VoucherEnquiryBySeqRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="VoucherEnquiryBySeqResultMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:VoucherEnquiryBySeqResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="OneOffDeductionRequestMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:OneOffDeductionRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="OneOffDeductionResultMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:OneOffDeductionResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="QueryAdjustmentLogRequestMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:QueryAdjustmentLogRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="QueryAdjustmentLogResultMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:QueryAdjustmentLogResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="PaymentRequestMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:PaymentRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="PaymentResultMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:PaymentResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="ReversePaymentRequestMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:ReversePaymentRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="ReversePaymentResultMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:ReversePaymentResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="AdjustSubAccountRequestMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:AdjustSubAccountRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="AdjustSubAccountResultMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:AdjustSubAccountResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="ExchangeAccountRequestMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:ExchangeAccountRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="ExchangeAccountResultMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:ExchangeAccountResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="VoucherRechargeEnquiryRequestMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:VoucherRechargeEnquiryRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="VoucherRechargeEnquiryResultMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:VoucherRechargeEnquiryResultMsg" />
+	</wsdl:message>
+	<wsdl:message name="ActiveFirstRequestMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:ActiveFirstRequestMsg" />
+	</wsdl:message>
+	<wsdl:message name="ActiveFirstResultMessage">
+		<wsdl:part name="part1"
+			element="accountmgrmsg:ActiveFirstResultMsg" />
+	</wsdl:message>
+	<wsdl:portType
+		name="CBSInterfaceAccountMgrServicePortType">
+		<wsdl:operation name="QueryBonusHistory">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:QueryBonusHistoryRequestMessage"
+				wsaw:Action="QueryBonusHistory" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:QueryBonusHistoryResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/QueryBonusHistoryResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="VoucherRechargeBySeq">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:VoucherRechargeBySeqRequestMessage"
+				wsaw:Action="VoucherRechargeBySeq" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:VoucherRechargeBySeqResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/VoucherRechargeBySeqResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="PaymentEnquiry">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:PaymentEnquiryRequestMessage"
+				wsaw:Action="PaymentEnquiry" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:PaymentEnquiryResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/PaymentEnquiryResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="TransferAccount">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:TransferAccountRequestMessage"
+				wsaw:Action="TransferAccount" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:TransferAccountResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/TransferAccountResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="QueryTransferLog">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:QueryTransferLogRequestMessage"
+				wsaw:Action="QueryTransferLog" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:QueryTransferLogResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/QueryTransferLogResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="ModSubBillCycleType">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:ModSubBillCycleTypeRequestMessage"
+				wsaw:Action="ModSubBillCycleType" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:ModSubBillCycleTypeResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/ModSubBillCycleTypeResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="CumulateEnquiry">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:CumulateEnquiryRequestMessage"
+				wsaw:Action="CumulateEnquiry" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:CumulateEnquiryResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/CumulateEnquiryResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="AdjustAccount">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:AdjustAccountRequestMessage"
+				wsaw:Action="AdjustAccount" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:AdjustAccountResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/AdjustAccountResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="TransInPpsPos">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:TransInPpsPosRequestMessage"
+				wsaw:Action="TransInPpsPos" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:TransInPpsPosResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/TransInPpsPosResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="QueryCallHistory">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:QueryCallHistoryRequestMessage"
+				wsaw:Action="QueryCallHistory" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:QueryCallHistoryResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/QueryCallHistoryResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="ServiceHandleFee">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:ServiceHandleFeeRequestMessage"
+				wsaw:Action="ServiceHandleFee" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:ServiceHandleFeeResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/ServiceHandleFeeResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="VoucherEnquiryByPIN">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:VoucherEnquiryByPINRequestMessage"
+				wsaw:Action="VoucherEnquiryByPIN" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:VoucherEnquiryByPINResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/VoucherEnquiryByPINResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="QueryBalance">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:QueryBalanceRequestMessage"
+				wsaw:Action="QueryBalance" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:QueryBalanceResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/QueryBalanceResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="SubAccountRecharge">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:SubAccountRechargeRequestMessage"
+				wsaw:Action="SubAccountRecharge" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:SubAccountRechargeResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/SubAccountRechargeResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="VoucherRecharge">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:VoucherRechargeRequestMessage"
+				wsaw:Action="VoucherRecharge" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:VoucherRechargeResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/VoucherRechargeResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="BalanceToValidity">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:BalanceToValidityRequestMessage"
+				wsaw:Action="BalanceToValidity" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:BalanceToValidityResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/BalanceToValidityResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="ModifyVoucherState">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:ModifyVoucherStateRequestMessage"
+				wsaw:Action="ModifyVoucherState" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:ModifyVoucherStateResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/ModifyVoucherStateResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="VoucherEnquiryBySeq">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:VoucherEnquiryBySeqRequestMessage"
+				wsaw:Action="VoucherEnquiryBySeq" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:VoucherEnquiryBySeqResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/VoucherEnquiryBySeqResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="OneOffDeduction">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:OneOffDeductionRequestMessage"
+				wsaw:Action="OneOffDeduction" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:OneOffDeductionResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/OneOffDeductionResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="QueryAdjustmentLog">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:QueryAdjustmentLogRequestMessage"
+				wsaw:Action="QueryAdjustmentLog" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:QueryAdjustmentLogResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/QueryAdjustmentLogResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="Payment">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:PaymentRequestMessage" wsaw:Action="Payment" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:PaymentResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/PaymentResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="ReversePayment">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:ReversePaymentRequestMessage"
+				wsaw:Action="ReversePayment" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:ReversePaymentResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/ReversePaymentResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="AdjustSubAccount">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:AdjustSubAccountRequestMessage"
+				wsaw:Action="AdjustSubAccount" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:AdjustSubAccountResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/AdjustSubAccountResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="ExchangeAccount">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:ExchangeAccountRequestMessage"
+				wsaw:Action="ExchangeAccount" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:ExchangeAccountResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/ExchangeAccountResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="VoucherRechargeEnquiry">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:VoucherRechargeEnquiryRequestMessage"
+				wsaw:Action="VoucherRechargeEnquiry" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:VoucherRechargeEnquiryResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/VoucherRechargeEnquiryResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="ActiveFirst">
+			<wsdl:input
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:ActiveFirstRequestMessage"
+				wsaw:Action="ActiveFirst" />
+			<wsdl:output
+				xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				message="account:ActiveFirstResultMessage"
+				wsaw:Action="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr/CBSInterfaceAccountMgr/ActiveFirstResponse" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding
+		name="CBSInterfaceAccountMgrServiceSOAP11Binding"
+		type="account:CBSInterfaceAccountMgrServicePortType">
+		<soap:binding
+			transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+		<wsdl:operation name="QueryBonusHistory">
+			<soap:operation soapAction="QueryBonusHistory"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="VoucherRechargeBySeq">
+			<soap:operation soapAction="VoucherRechargeBySeq"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="PaymentEnquiry">
+			<soap:operation soapAction="PaymentEnquiry"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="TransferAccount">
+			<soap:operation soapAction="TransferAccount"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QueryTransferLog">
+			<soap:operation soapAction="QueryTransferLog"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ModSubBillCycleType">
+			<soap:operation soapAction="ModSubBillCycleType"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="CumulateEnquiry">
+			<soap:operation soapAction="CumulateEnquiry"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="AdjustAccount">
+			<soap:operation soapAction="AdjustAccount"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="TransInPpsPos">
+			<soap:operation soapAction="TransInPpsPos"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QueryCallHistory">
+			<soap:operation soapAction="QueryCallHistory"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ServiceHandleFee">
+			<soap:operation soapAction="ServiceHandleFee"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="VoucherEnquiryByPIN">
+			<soap:operation soapAction="VoucherEnquiryByPIN"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QueryBalance">
+			<soap:operation soapAction="QueryBalance"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="SubAccountRecharge">
+			<soap:operation soapAction="SubAccountRecharge"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="VoucherRecharge">
+			<soap:operation soapAction="VoucherRecharge"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="BalanceToValidity">
+			<soap:operation soapAction="BalanceToValidity"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ModifyVoucherState">
+			<soap:operation soapAction="ModifyVoucherState"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="VoucherEnquiryBySeq">
+			<soap:operation soapAction="VoucherEnquiryBySeq"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="OneOffDeduction">
+			<soap:operation soapAction="OneOffDeduction"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QueryAdjustmentLog">
+			<soap:operation soapAction="QueryAdjustmentLog"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Payment">
+			<soap:operation soapAction="Payment" style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ReversePayment">
+			<soap:operation soapAction="ReversePayment"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="AdjustSubAccount">
+			<soap:operation soapAction="AdjustSubAccount"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ExchangeAccount">
+			<soap:operation soapAction="ExchangeAccount"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="VoucherRechargeEnquiry">
+			<soap:operation soapAction="VoucherRechargeEnquiry"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ActiveFirst">
+			<soap:operation soapAction="ActiveFirst"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding
+		name="CBSInterfaceAccountMgrServiceSOAP12Binding"
+		type="account:CBSInterfaceAccountMgrServicePortType">
+		<soap12:binding
+			transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+		<wsdl:operation name="QueryBonusHistory">
+			<soap12:operation soapAction="QueryBonusHistory"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="VoucherRechargeBySeq">
+			<soap12:operation soapAction="VoucherRechargeBySeq"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="PaymentEnquiry">
+			<soap12:operation soapAction="PaymentEnquiry"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="TransferAccount">
+			<soap12:operation soapAction="TransferAccount"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QueryTransferLog">
+			<soap12:operation soapAction="QueryTransferLog"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ModSubBillCycleType">
+			<soap12:operation soapAction="ModSubBillCycleType"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="CumulateEnquiry">
+			<soap12:operation soapAction="CumulateEnquiry"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="AdjustAccount">
+			<soap12:operation soapAction="AdjustAccount"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="TransInPpsPos">
+			<soap12:operation soapAction="TransInPpsPos"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QueryCallHistory">
+			<soap12:operation soapAction="QueryCallHistory"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ServiceHandleFee">
+			<soap12:operation soapAction="ServiceHandleFee"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="VoucherEnquiryByPIN">
+			<soap12:operation soapAction="VoucherEnquiryByPIN"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QueryBalance">
+			<soap12:operation soapAction="QueryBalance"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="SubAccountRecharge">
+			<soap12:operation soapAction="SubAccountRecharge"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="VoucherRecharge">
+			<soap12:operation soapAction="VoucherRecharge"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="BalanceToValidity">
+			<soap12:operation soapAction="BalanceToValidity"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ModifyVoucherState">
+			<soap12:operation soapAction="ModifyVoucherState"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="VoucherEnquiryBySeq">
+			<soap12:operation soapAction="VoucherEnquiryBySeq"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="OneOffDeduction">
+			<soap12:operation soapAction="OneOffDeduction"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="QueryAdjustmentLog">
+			<soap12:operation soapAction="QueryAdjustmentLog"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Payment">
+			<soap12:operation soapAction="Payment"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ReversePayment">
+			<soap12:operation soapAction="ReversePayment"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="AdjustSubAccount">
+			<soap12:operation soapAction="AdjustSubAccount"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ExchangeAccount">
+			<soap12:operation soapAction="ExchangeAccount"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="VoucherRechargeEnquiry">
+			<soap12:operation
+				soapAction="VoucherRechargeEnquiry" style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ActiveFirst">
+			<soap12:operation soapAction="ActiveFirst"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="CBSInterfaceAccountMgrService">
+		<wsdl:port
+			name="CBSInterfaceAccountMgrServiceSOAP11port_http"
+			binding="account:CBSInterfaceAccountMgrServiceSOAP11Binding">
+			<soap:address
+				location="http://www.huawei.com/bme/cbsinterface/accountmgr/wsdl/CBSInterface_AcctMgr.wsdl" />
+		</wsdl:port>
+		<wsdl:port
+			name="CBSInterfaceAccountMgrServiceSOAP12port_http"
+			binding="account:CBSInterfaceAccountMgrServiceSOAP12Binding">
+			<soap12:address
+				location="http://www.huawei.com/bme/cbsinterface/accountmgr/wsdl/CBSInterface_AcctMgr.wsdl" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,211 @@
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:cbscommon="http://www.huawei.com/bme/cbsinterface/cbscommon" xmlns:ar="http://www.huawei.com/bme/cbsinterface/arservices" xmlns:ns="http://cbs.huawei.com/ar/wsservice/arcommon" targetNamespace="http://www.huawei.com/bme/cbsinterface/arservices">
+	<types>
+		<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://www.huawei.com/bme/cbsinterface/arservices">
+			<import namespace="http://www.huawei.com/bme/cbsinterface/cbscommon" schemaLocation="CBSInterface_MessageHeader.xsd"/>
+			<include schemaLocation="CBSInterface_AR_Adjustment.xsd"/>
+			<include schemaLocation="CBSInterface_AR_TransferBalance.xsd"/>
+			<include schemaLocation="CBSInterface_AR_Loan.xsd"/>
+			<include schemaLocation="CBSInterface_AR_QueryLoanLog.xsd"/>
+			<include schemaLocation="CBSInterface_AR_QueryOCSBalance.xsd"/>
+			
+			
+			<element name="TransferBalanceRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="cbscommon:RequestHeader"/>
+						<xs:element name="TransferBalanceRequest" type="ar:TransferBalanceRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="TransferBalanceResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="cbscommon:ResultHeader"/>
+						<xs:element name="TransferBalanceResult" type="ar:TransferBalanceResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			
+			<element name="AdjustmentRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="cbscommon:RequestHeader"/>
+						<xs:element name="AdjustmentRequest" type="ar:AdjustmentRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="AdjustmentResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="cbscommon:ResultHeader"/>
+						<xs:element name="AdjustmentResult" type="ar:AdjustmentResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="LoanRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="cbscommon:RequestHeader"/>
+						<xs:element name="LoanRequest" type="ar:LoanRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="LoanResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="cbscommon:ResultHeader"/>
+						<xs:element name="LoanResult" type="ar:LoanResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			
+			<element name="QueryLoanLogRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="cbscommon:RequestHeader"/>
+						<xs:element name="QueryLoanLogRequest" type="ar:QueryLoanLogRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryLoanLogResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="cbscommon:ResultHeader"/>
+						<xs:element name="QueryLoanLogResult" type="ar:QueryLoanLogResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryOCSBalanceRequestMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RequestHeader" type="cbscommon:RequestHeader"/>
+						<xs:element name="QueryOCSBalanceRequest" type="ar:QueryOCSBalanceRequest"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+			<element name="QueryOCSBalanceResultMsg">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ResultHeader" type="cbscommon:ResultHeader"/>
+						<xs:element name="QueryOCSBalanceResult" type="ar:QueryOCSBalanceResult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</element>
+		</xs:schema>
+	</types>
+	
+	
+	<message name="TransferBalanceRequestMessage">
+		<part name="TransferBalanceRequestMsg" element="ar:TransferBalanceRequestMsg"/>
+	</message>
+	<message name="TransferBalanceResultMessage">
+		<part name="TransferBalanceResultMsg" element="ar:TransferBalanceResultMsg"/>
+	</message>
+	<message name="AdjustmentRequestMessage">
+		<part name="AdjustmentRequestMsg" element="ar:AdjustmentRequestMsg"/>
+	</message>
+	<message name="AdjustmentResultMessage">
+		<part name="AdjustmentResultMsg" element="ar:AdjustmentResultMsg"/>
+	</message>
+	<message name="LoanRequestMessage">
+		<part name="LoanRequestMsg" element="ar:LoanRequestMsg"/>
+	</message>
+	<message name="LoanResultMessage">
+		<part name="LoanResultMsg" element="ar:LoanResultMsg"/>
+	</message>
+	<message name="QueryLoanLogRequestMessage">
+		<part name="QueryLoanLogRequestMsg" element="ar:QueryLoanLogRequestMsg"/>
+	</message>
+	<message name="QueryLoanLogResultMessage">
+		<part name="QueryLoanLogResultMsg" element="ar:QueryLoanLogResultMsg"/>
+	</message>
+	<message name="QueryOCSBalanceRequestMessage">
+		<part name="QueryOCSBalanceRequestMsg" element="ar:QueryOCSBalanceRequestMsg"/>
+	</message>
+	<message name="QueryOCSBalanceResultMessage">
+		<part name="QueryOCSBalanceResultMsg" element="ar:QueryOCSBalanceResultMsg"/>
+	</message>
+	
+	<portType name="ArServices">
+		
+		<operation name="Adjustment">
+			<input message="ar:AdjustmentRequestMessage"/>
+			<output message="ar:AdjustmentResultMessage"/>
+		</operation>
+		<operation name="Loan">
+			<input message="ar:LoanRequestMessage"/>
+			<output message="ar:LoanResultMessage"/>
+		</operation>
+		
+		<operation name="TransferBalance">
+			<input message="ar:TransferBalanceRequestMessage"/>
+			<output message="ar:TransferBalanceResultMessage"/>
+		</operation>
+		
+		<operation name="QueryLoanLog">
+			<input message="ar:QueryLoanLogRequestMessage"/>
+			<output message="ar:QueryLoanLogResultMessage"/>
+		</operation>
+		<operation name="QueryOCSBalance">
+			<input message="ar:QueryOCSBalanceRequestMessage"/>
+			<output message="ar:QueryOCSBalanceResultMessage"/>
+		</operation>
+	</portType>
+	
+	<binding name="ArServicsBinding" type="ar:ArServices">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		
+		<operation name="TransferBalance">
+			<soap:operation soapAction="TransferBalance" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		
+		<operation name="Adjustment">
+			<soap:operation soapAction="Adjustment" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="Loan">
+			<soap:operation soapAction="Loan" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		
+		<operation name="QueryLoanLog">
+			<soap:operation soapAction="QueryLoanLog" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="QueryOCSBalance">
+			<soap:operation soapAction="QueryOCSBalance" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="ArServices">
+		<port name="ArServicesPort" binding="ar:ArServicsBinding">
+			<soap:address location="http://www.huawei.com/bme/cbsinterface/arservices/wsdl/CBSInterface_AR_Services.wsdl"/>
+		</port>
+	</service>
+</definitions>

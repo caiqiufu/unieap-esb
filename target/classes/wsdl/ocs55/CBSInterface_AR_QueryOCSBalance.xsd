@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 被2012 () 使用XMLSpy v编辑的 (http://www.altova.com) by -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:arcommon="http://cbs.huawei.com/ar/wsservice/arcommon" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://cbs.huawei.com/ar/wsservice/arcommon" schemaLocation="CBSInterface_AR_Common.xsd"/>
+	<!--Query balance -->
+	<xs:complexType name="QueryOCSBalanceRequest">
+		<xs:sequence>
+			<xs:element name="QueryObj">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element name="SubAccessCode" type="arcommon:SubAccessCode"/>
+						<xs:element name="GroupAccessCode" type="arcommon:SubGroupAccessCode"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryOCSBalanceResult">
+		<xs:sequence>
+			<xs:element name="AcctList" maxOccurs="2">
+				<xs:annotation>
+					<xs:documentation>如果按照用户查询，对于Hybrid的用户同时返回预付费帐户和后付费帐户</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="AcctKey" type="xs:string"/>
+						<xs:element name="BalanceResult" type="arcommon:AcctBalance" maxOccurs="unbounded"/>
+						<xs:element name="AccountCredit" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="CreditLimitType" type="xs:string" minOccurs="0"/>
+									<xs:element name="CreditLimitTypeName" type="xs:string" minOccurs="0"/>
+									<xs:element name="TotalCreditAmount" type="xs:long"/>
+									<xs:element name="TotalUsageAmount" type="xs:long"/>
+									<xs:element name="TotalRemainAmount" type="xs:long"/>
+									<xs:element name="CurrencyID" type="xs:integer"/>
+									<xs:element name="CreditAmountInfo" minOccurs="0" maxOccurs="unbounded">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="CreditInstID" type="xs:long"/>
+												<xs:element name="LimitClass" type="xs:string">
+													<xs:annotation>
+														<xs:documentation>I: 初始信用度
+T: 临时信用度</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element name="Amount" type="xs:long"/>
+												<xs:element name="EffectiveTime" type="xs:string"/>
+												<xs:element name="ExpireTime" type="xs:string"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="FreeUnitItem" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="FreeUnitType" type="xs:string"/>
+						<xs:element name="FreeUnitTypeName" type="xs:string"/>
+						<xs:element name="MeasureUnit" type="xs:string"/>
+						<xs:element name="MeasureUnitName" type="xs:string"/>
+						<xs:element name="TotalInitialAmount" type="xs:long"/>
+						<xs:element name="TotalUnusedAmount" type="xs:long"/>
+						<xs:element name="FreeUnitItemDetail" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="FreeUnitInstanceID" type="xs:long"/>
+									<xs:element name="InitialAmount" type="xs:long"/>
+									<xs:element name="CurrentAmount" type="xs:long"/>
+									<xs:element name="EffectiveTime" type="xs:string"/>
+									<xs:element name="ExpireTime" type="xs:string"/>
+									<xs:element name="FreeUnitOrigin" minOccurs="0">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="OriginType" type="xs:string"/>
+												<xs:choice>
+													<xs:element name="OfferingKey" minOccurs="0">
+														<xs:complexType>
+															<xs:complexContent>
+																<xs:extension base="arcommon:OfferingKey">
+																	<xs:sequence>
+																		<xs:element name="OfferingName" type="xs:string"/>
+																	</xs:sequence>
+																</xs:extension>
+															</xs:complexContent>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="PlanID" type="xs:long" nillable="true" minOccurs="0"/>
+												</xs:choice>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="RollOverFlag" type="xs:string"/>
+									<xs:element name="LastRollOveredTime" type="xs:string" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

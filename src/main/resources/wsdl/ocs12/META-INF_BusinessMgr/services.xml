@@ -1,0 +1,290 @@
+<!-- This file was auto-generated from WSDL -->
+<!-- by the Apache Axis2 version: #axisVersion# #today# -->
+<serviceGroup>
+<service name="CBSInterfaceBusinessMgrService">
+<messageReceivers>
+<messageReceiver mep="http://www.w3.org/2004/08/wsdl/in-out" class="com.huawei.bus.ws.skeleton.CBSInterfaceBusinessMgrServiceMessageReceiverInOut"/>
+</messageReceivers>
+<parameter locked="false" name="ServiceClass">com.huawei.bus.ws.skeleton.CBSInterfaceBusinessMgrServiceSkeleton</parameter>
+<operation name="DisclaimMissing" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>DisclaimMissing</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/DisclaimMissingResponse</outputActionMapping>
+</operation>
+<operation name="ChangeAppendantProduct" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>ChangeAppendantProduct</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ChangeAppendantProductResponse</outputActionMapping>
+</operation>
+<operation name="ManSubFamilyNo" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>ManSubFamilyNo</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ManSubFamilyNoResponse</outputActionMapping>
+</operation>
+<operation name="QueryLanguageInf" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>QueryLanguageInf</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QueryLanguageInfResponse</outputActionMapping>
+</operation>
+<operation name="ChangeServices" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>ChangeServices</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ChangeServicesResponse</outputActionMapping>
+</operation>
+<operation name="ModifyPosUserState" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>ModifyPosUserState</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ModifyPosUserStateResponse</outputActionMapping>
+</operation>
+<operation name="ManCUGInfo" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>ManCUGInfo</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ManCUGInfoResponse</outputActionMapping>
+</operation>
+<operation name="IntegrationEnquiry" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>IntegrationEnquiry</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/IntegrationEnquiryResponse</outputActionMapping>
+</operation>
+<operation name="QueryDefinedZonesInfo" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>QueryDefinedZonesInfo</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QueryDefinedZonesInfoResponse</outputActionMapping>
+</operation>
+<operation name="ManSubCallScreenNo" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>ManSubCallScreenNo</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ManSubCallScreenNoResponse</outputActionMapping>
+</operation>
+<operation name="QueryUserGroup" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>QueryUserGroup</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QueryUserGroupResponse</outputActionMapping>
+</operation>
+<operation name="QueryAccumulatedPassInfo" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>QueryAccumulatedPassInfo</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QueryAccumulatedPassInfoResponse</outputActionMapping>
+</operation>
+<operation name="QueryAdjustValidityLog" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>QueryAdjustValidityLog</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QueryAdjustValidityLogResponse</outputActionMapping>
+</operation>
+<operation name="ModifyCFNo" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>ModifyCFNo</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ModifyCFNoResponse</outputActionMapping>
+</operation>
+<operation name="UpdateCUGList" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>UpdateCUGList</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/UpdateCUGListResponse</outputActionMapping>
+</operation>
+<operation name="QuerySubHomeZone" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>QuerySubHomeZone</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QuerySubHomeZoneResponse</outputActionMapping>
+</operation>
+<operation name="UnSubscribeAppendantProductExt" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>UnSubscribeAppendantProductExt</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/UnSubscribeAppendantProductExtResponse</outputActionMapping>
+</operation>
+<operation name="QueryPassInfo" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>QueryPassInfo</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QueryPassInfoResponse</outputActionMapping>
+</operation>
+<operation name="CheckOperatorPassword" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>CheckOperatorPassword</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/CheckOperatorPasswordResponse</outputActionMapping>
+</operation>
+<operation name="NewSubscriberExt" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>NewSubscriberExt</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/NewSubscriberExtResponse</outputActionMapping>
+</operation>
+<operation name="ManSubHomeZone" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>ManSubHomeZone</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ManSubHomeZoneResponse</outputActionMapping>
+</operation>
+<operation name="BindProductSubscriberNo" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>BindProductSubscriberNo</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/BindProductSubscriberNoResponse</outputActionMapping>
+</operation>
+<operation name="ClaimMissing" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>ClaimMissing</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ClaimMissingResponse</outputActionMapping>
+</operation>
+<operation name="ChangeSIM" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>ChangeSIM</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ChangeSIMResponse</outputActionMapping>
+</operation>
+<operation name="ManGroupMember" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>ManGroupMember</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ManGroupMemberResponse</outputActionMapping>
+</operation>
+<operation name="QuerySubLowBalPrt" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>QuerySubLowBalPrt</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QuerySubLowBalPrtResponse</outputActionMapping>
+</operation>
+<operation name="SubscribeAppendantProduct" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>SubscribeAppendantProduct</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/SubscribeAppendantProductResponse</outputActionMapping>
+</operation>
+<operation name="ManPromotionPlan" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>ManPromotionPlan</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ManPromotionPlanResponse</outputActionMapping>
+</operation>
+<operation name="QueryPassCapEventInfo" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>QueryPassCapEventInfo</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QueryPassCapEventInfoResponse</outputActionMapping>
+</operation>
+<operation name="QuerySubCallScreenNo" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>QuerySubCallScreenNo</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QuerySubCallScreenNoResponse</outputActionMapping>
+</operation>
+<operation name="ChangeCustBasicInfor" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>ChangeCustBasicInfor</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ChangeCustBasicInforResponse</outputActionMapping>
+</operation>
+<operation name="Suspend" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>Suspend</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/SuspendResponse</outputActionMapping>
+</operation>
+<operation name="DeleteRechageBlack" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>DeleteRechageBlack</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/DeleteRechageBlackResponse</outputActionMapping>
+</operation>
+<operation name="ChangeMainProd" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>ChangeMainProd</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ChangeMainProdResponse</outputActionMapping>
+</operation>
+<operation name="UpdateSubscriberSegmentation" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>UpdateSubscriberSegmentation</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/UpdateSubscriberSegmentationResponse</outputActionMapping>
+</operation>
+<operation name="ChangePassword" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>ChangePassword</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ChangePasswordResponse</outputActionMapping>
+</operation>
+<operation name="ChangeSubLowBalPrt" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>ChangeSubLowBalPrt</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ChangeSubLowBalPrtResponse</outputActionMapping>
+</operation>
+<operation name="QuerySubscribedGroup" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>QuerySubscribedGroup</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QuerySubscribedGroupResponse</outputActionMapping>
+</operation>
+<operation name="BatchSubscribeAppProduct" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>BatchSubscribeAppProduct</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/BatchSubscribeAppProductResponse</outputActionMapping>
+</operation>
+<operation name="ChangeOwner" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>ChangeOwner</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ChangeOwnerResponse</outputActionMapping>
+</operation>
+<operation name="QuerySubFamilyNo" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>QuerySubFamilyNo</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QuerySubFamilyNoResponse</outputActionMapping>
+</operation>
+<operation name="ManParentChild" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>ManParentChild</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ManParentChildResponse</outputActionMapping>
+</operation>
+<operation name="ReNewSubscriber" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>ReNewSubscriber</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ReNewSubscriberResponse</outputActionMapping>
+</operation>
+<operation name="ModifySubscriberValidity" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>ModifySubscriberValidity</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ModifySubscriberValidityResponse</outputActionMapping>
+</operation>
+<operation name="BatchOperation" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>BatchOperation</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/BatchOperationResponse</outputActionMapping>
+</operation>
+<operation name="QueryPromotionPlan" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>QueryPromotionPlan</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QueryPromotionPlanResponse</outputActionMapping>
+</operation>
+<operation name="ChangeSubscriberBasicInfor" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>ChangeSubscriberBasicInfor</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ChangeSubscriberBasicInforResponse</outputActionMapping>
+</operation>
+<operation name="ChangeMSISDN" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>ChangeMSISDN</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ChangeMSISDNResponse</outputActionMapping>
+</operation>
+<operation name="QueryGroupMember" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>QueryGroupMember</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QueryGroupMemberResponse</outputActionMapping>
+</operation>
+<operation name="QueryCUGType" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>QueryCUGType</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QueryCUGTypeResponse</outputActionMapping>
+</operation>
+<operation name="ModifySubscriberState" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>ModifySubscriberState</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ModifySubscriberStateResponse</outputActionMapping>
+</operation>
+<operation name="DeleteSubscriberExt" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>DeleteSubscriberExt</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/DeleteSubscriberExtResponse</outputActionMapping>
+</operation>
+<operation name="CheckPassword" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>CheckPassword</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/CheckPasswordResponse</outputActionMapping>
+</operation>
+<operation name="DeleteSubscriber" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>DeleteSubscriber</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/DeleteSubscriberResponse</outputActionMapping>
+</operation>
+<operation name="QuerySubscriberServiceInfo" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>QuerySubscriberServiceInfo</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QuerySubscriberServiceInfoResponse</outputActionMapping>
+</operation>
+<operation name="QueryChildLimit" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>QueryChildLimit</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QueryChildLimitResponse</outputActionMapping>
+</operation>
+<operation name="QueryBasicInfo" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>QueryBasicInfo</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QueryBasicInfoResponse</outputActionMapping>
+</operation>
+<operation name="QuerySubscriberProductInfo" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>QuerySubscriberProductInfo</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QuerySubscriberProductInfoResponse</outputActionMapping>
+</operation>
+<operation name="QueryInterActLog" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>QueryInterActLog</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QueryInterActLogResponse</outputActionMapping>
+</operation>
+<operation name="Reconnect" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>Reconnect</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ReconnectResponse</outputActionMapping>
+</operation>
+<operation name="QueryCUGMembers" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>QueryCUGMembers</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QueryCUGMembersResponse</outputActionMapping>
+</operation>
+<operation name="BlockSubscriber" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>BlockSubscriber</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/BlockSubscriberResponse</outputActionMapping>
+</operation>
+<operation name="ResetPassword" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>ResetPassword</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ResetPasswordResponse</outputActionMapping>
+</operation>
+<operation name="CheckUVCPartPin" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>CheckUVCPartPin</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/CheckUVCPartPinResponse</outputActionMapping>
+</operation>
+<operation name="QuerySubChangeLog" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>QuerySubChangeLog</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/QuerySubChangeLogResponse</outputActionMapping>
+</operation>
+<operation name="ChangeAccountBasicInfor" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>ChangeAccountBasicInfor</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ChangeAccountBasicInforResponse</outputActionMapping>
+</operation>
+<operation name="UnSubscribeAppendantProduct" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>UnSubscribeAppendantProduct</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/UnSubscribeAppendantProductResponse</outputActionMapping>
+</operation>
+<operation name="SynDTDiscount" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>SynDTDiscount</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/SynDTDiscountResponse</outputActionMapping>
+</operation>
+<operation name="NewSubscriber" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>NewSubscriber</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/NewSubscriberResponse</outputActionMapping>
+</operation>
+<operation name="ChangeCreditLevel" mep="http://www.w3.org/2004/08/wsdl/in-out">
+<actionMapping>ChangeCreditLevel</actionMapping>
+<outputActionMapping>http://www.huawei.com/bme/cbsinterface/cbs/businessmgr/CBSInterfaceBusinessMgr/ChangeCreditLevelResponse</outputActionMapping>
+</operation>
+</service>
+</serviceGroup>

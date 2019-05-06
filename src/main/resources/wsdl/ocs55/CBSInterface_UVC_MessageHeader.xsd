@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:uvcheader="http://www.huawei.com/bme/cbsinterface/uvcheader" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.huawei.com/bme/cbsinterface/uvcheader" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:annotation>
+		<xs:documentation>common structure of header</xs:documentation>
+	</xs:annotation>
+	<xs:complexType name="SecurityInfo">
+		<xs:sequence>
+			<xs:element name="LoginSystemCode" type="xs:string"/>
+			<xs:element name="Password" type="xs:string" minOccurs="0"/>
+			<xs:element name="RemoteIP" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="OperatorInfo">
+		<xs:sequence>
+			<xs:element name="OperatorID" type="xs:string"/>
+			<xs:element name="ChannelID" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="OwnershipInfo">
+		<xs:sequence>
+			<xs:element name="BEID" type="xs:int"/>
+			<xs:element name="BRID" type="xs:int" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RequestHeader">
+		<xs:sequence>
+			<xs:element name="Version" type="xs:string"/>
+			<xs:element name="BusinessCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="MessageSeq" type="xs:string"/>
+			<xs:element name="OwnershipInfo" type="uvcheader:OwnershipInfo" minOccurs="0"/>
+			<xs:element name="AccessSecurity" type="uvcheader:SecurityInfo"/>
+			<xs:element name="OperatorInfo" type="uvcheader:OperatorInfo" minOccurs="0"/>
+			<xs:element name="MsgLanguageCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="TimeFormat" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="TimeType" type="xs:string"/>
+						<xs:element name="TimeZoneID" type="xs:string" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ResultHeader">
+		<xs:sequence>
+			<xs:element name="Version" type="xs:string"/>
+			<xs:element name="ResultCode" type="xs:string"/>
+			<xs:element name="ResultDesc" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
