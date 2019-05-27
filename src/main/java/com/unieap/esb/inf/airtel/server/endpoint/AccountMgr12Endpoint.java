@@ -11,16 +11,16 @@ import com.huawei.ocs12.accountmgrservice.QueryBalanceResultMsg;
 import com.huawei.ocs12.accountmgrservice.ResultHeader;
 import com.unieap.base.UnieapConstants;
 import com.unieap.base.inf.element.RequestInfo;
-import com.unieap.base.inf.handler.BizServiceBO;
+import com.unieap.base.inf.handler.BizServiceHandler;
 import com.unieap.base.inf.handler.BizServiceUtils;
 import com.unieap.base.inf.handler.ProcessResult;
 import com.unieap.base.pojo.Esblog;
 import com.unieap.base.repository.EsbLogCacheMgt;
 import com.unieap.base.utils.JSONUtils;
-import com.unieap.esb.inf.airtel.server.handler.HandlerUtils;
+import com.unieap.esb.inf.airtel.server.handler.RequestHeaderHandlerUtils;
 
 @Endpoint
-public class AccountMgr12Endpoint extends BizServiceBO {
+public class AccountMgr12Endpoint extends BizServiceHandler {
 
 	@Value("${spring.application.name}")
 	public String appCode;
@@ -33,8 +33,8 @@ public class AccountMgr12Endpoint extends BizServiceBO {
 	@ResponsePayload
 	public QueryBalanceResultMsg QueryBalance(@RequestPayload QueryBalanceRequestMsg payload) throws Exception {
 		long beginTime = System.currentTimeMillis();
-		String bizCode = "E0012";
-		RequestInfo requestInfo = HandlerUtils.getRequestInfoFromRequest12AccountMgr(payload.getRequestHeader(),
+		String bizCode = "E9401010002";
+		RequestInfo requestInfo = RequestHeaderHandlerUtils.getRequestInfoFromRequest12AccountMgr(payload.getRequestHeader(),
 				bizCode, payload.getQueryBalanceRequest().getSubscriberNo());
 		ProcessResult processResult = this.process(payload, requestInfo, "QueryBalanceResultMsg",
 				QueryBalanceResultMsg.class);
@@ -44,8 +44,10 @@ public class AccountMgr12Endpoint extends BizServiceBO {
 		} else {
 			com.huawei.ocs12.accountmgrservice.ObjectFactory factory = new com.huawei.ocs12.accountmgrservice.ObjectFactory();
 			response = factory.createQueryBalanceResultMsg();
-			response.getResultHeader().setResultCode(processResult.getResultCode());
-			response.getResultHeader().setResultDesc(processResult.getResultDesc());
+			ResultHeader resultHeader = new ResultHeader();
+			response.setResultHeader(resultHeader);
+			resultHeader.setResultCode(processResult.getResultCode());
+			resultHeader.setResultDesc(processResult.getResultDesc());
 
 		}
 		this.saveEsbLog(beginTime, requestInfo, response.getResultHeader(), payload, response);
@@ -71,7 +73,7 @@ public class AccountMgr12Endpoint extends BizServiceBO {
 		long endTime = System.currentTimeMillis();
 		String during = "" + (endTime - beginTime);
 		Esblog esblog = BizServiceUtils.getEsbLog(requestInfo, processResult, requestInfoString, responseInfoString,
-				during, app_code);
+				during, appCode);
 		String responseTime = UnieapConstants.getCurrentTime();
 		esblog.setResponseTime(responseTime);
 		EsbLogCacheMgt.setEsbLogVO(esblog);

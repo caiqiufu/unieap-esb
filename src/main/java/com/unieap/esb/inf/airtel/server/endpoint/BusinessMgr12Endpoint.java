@@ -10,16 +10,16 @@ import com.huawei.ocs12.businessmgrservice.QueryBasicInfoRequestMsg;
 import com.huawei.ocs12.businessmgrservice.QueryBasicInfoResultMsg;
 import com.unieap.base.UnieapConstants;
 import com.unieap.base.inf.element.RequestInfo;
-import com.unieap.base.inf.handler.BizServiceBO;
+import com.unieap.base.inf.handler.BizServiceHandler;
 import com.unieap.base.inf.handler.BizServiceUtils;
 import com.unieap.base.inf.handler.ProcessResult;
 import com.unieap.base.pojo.Esblog;
 import com.unieap.base.repository.EsbLogCacheMgt;
 import com.unieap.base.utils.JSONUtils;
-import com.unieap.esb.inf.airtel.server.handler.HandlerUtils;
+import com.unieap.esb.inf.airtel.server.handler.RequestHeaderHandlerUtils;
 
 @Endpoint
-public class BusinessMgr12Endpoint extends BizServiceBO {
+public class BusinessMgr12Endpoint extends BizServiceHandler {
 
 	@Value("${spring.application.name}")
 	public String appCode;
@@ -33,7 +33,7 @@ public class BusinessMgr12Endpoint extends BizServiceBO {
 	public QueryBasicInfoResultMsg QueryBasicInfo(@RequestPayload QueryBasicInfoRequestMsg payload) throws Exception {
 		long beginTime = System.currentTimeMillis();
 		String bizCode = "E0013";
-		RequestInfo requestInfo = HandlerUtils.getRequestInfoFromRequest12BusinessMgr(payload.getRequestHeader(),
+		RequestInfo requestInfo = RequestHeaderHandlerUtils.getRequestInfoFromRequest12BusinessMgr(payload.getRequestHeader(),
 				bizCode, payload.getQueryBasicInfoRequest().getSubscriberNo());
 		ProcessResult processResult = this.process(payload, requestInfo, "QueryBasicInfoResultMsg",
 				QueryBasicInfoResultMsg.class);
@@ -71,7 +71,7 @@ public class BusinessMgr12Endpoint extends BizServiceBO {
 		long endTime = System.currentTimeMillis();
 		String during = "" + (endTime - beginTime);
 		Esblog esblog = BizServiceUtils.getEsbLog(requestInfo, processResult, requestInfoString, responseInfoString,
-				during, app_code);
+				during, appCode);
 		String responseTime = UnieapConstants.getCurrentTime();
 		esblog.setResponseTime(responseTime);
 		EsbLogCacheMgt.setEsbLogVO(esblog);

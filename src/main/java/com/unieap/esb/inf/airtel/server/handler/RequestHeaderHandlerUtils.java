@@ -4,7 +4,7 @@ import com.unieap.base.inf.element.RequestInfo;
 import com.unieap.base.inf.handler.BizServiceUtils;
 import com.unieap.base.utils.DateUtils;
 
-public class HandlerUtils {
+public class RequestHeaderHandlerUtils {
 	public static RequestInfo getRequestInfoFromRequest12AccountMgr(com.huawei.ocs12.accountmgrservice.RequestHeader requestHeader, String bizCode,
 			String serviceNumber) {
 		RequestInfo requestInfo = new RequestInfo();
