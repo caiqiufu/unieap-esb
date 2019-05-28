@@ -1,6 +1,5 @@
 package com.unieap.esb.inf.airtel.server.endpoint;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
@@ -21,8 +20,6 @@ import com.unieap.esb.inf.airtel.server.handler.RequestHeaderHandlerUtils;
 @Endpoint
 public class BusinessMgr12Endpoint extends BizServiceHandler {
 
-	@Value("${spring.application.name}")
-	public String appCode;
 	/**
 	 * AR_NAMESPACE_URI QueryBasicInfoRequestMsg namespace QueryBasicInfo operation
 	 */
