@@ -7,15 +7,12 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
 import com.huawei.ocs12.businessmgrservice.QueryBasicInfoRequestMsg;
 import com.huawei.ocs12.businessmgrservice.QueryBasicInfoResultMsg;
-import com.unieap.base.UnieapConstants;
 import com.unieap.base.inf.element.RequestInfo;
 import com.unieap.base.inf.handler.BizServiceHandler;
-import com.unieap.base.inf.handler.BizServiceUtils;
 import com.unieap.base.inf.handler.ProcessResult;
-import com.unieap.base.pojo.Esblog;
-import com.unieap.base.repository.EsbLogCacheMgt;
-import com.unieap.base.utils.JSONUtils;
 import com.unieap.esb.inf.airtel.server.handler.RequestHeaderHandlerUtils;
+
+import net.sf.json.JSONObject;
 
 @Endpoint
 public class BusinessMgr12Endpoint extends BizServiceHandler {
@@ -44,33 +41,11 @@ public class BusinessMgr12Endpoint extends BizServiceHandler {
 			response.getResultHeader().setResultDesc(processResult.getResultDesc());
 
 		}
-		this.saveEsbLog(beginTime, requestInfo, response.getResultHeader(), payload, response);
+		JSONObject jsonObj = this.getRequestServerInfo();
+		jsonObj.put("appCode", appCode);
+		jsonObj.put("server.address", address);
+		jsonObj.put("server.port", port);
+		this.saveEsbLogXMLObj(beginTime, requestInfo,response.getResultHeader().getResultCode(),response.getResultHeader().getResultDesc(), payload, response, jsonObj.toString());
 		return response;
-	}
-
-	/**
-	 * 
-	 * @param beginTime
-	 * @param requestInfo
-	 * @param resultHeader
-	 * @param payload
-	 * @param response
-	 * @throws Exception
-	 */
-	private void saveEsbLog(long beginTime, RequestInfo requestInfo,
-			com.huawei.ocs12.businessmgrservice.ResultHeader resultHeader, Object payload, Object response)
-			throws Exception {
-		ProcessResult processResult = new ProcessResult();
-		processResult.setResultCode(resultHeader.getResultCode());
-		processResult.setResultDesc(resultHeader.getResultDesc());
-		String requestInfoString = JSONUtils.convertBean2JSON(payload).toString();
-		String responseInfoString = JSONUtils.convertBean2JSON(response).toString();
-		long endTime = System.currentTimeMillis();
-		String during = "" + (endTime - beginTime);
-		Esblog esblog = BizServiceUtils.getEsbLog(requestInfo, processResult, requestInfoString, responseInfoString,
-				during, appCode);
-		String responseTime = UnieapConstants.getCurrentTime();
-		esblog.setResponseTime(responseTime);
-		EsbLogCacheMgt.setEsbLogVO(esblog);
 	}
 }

@@ -1,3 +1,10 @@
+##################################################
+#4个需要修改的点
+#1.eureka 服务器地址
+#2.该应用的端口和地址
+#3.日志级别
+#4.数据库连接地址 
+##################################################
 #################################################
 #应用级别参数
 #################################################
@@ -21,11 +28,16 @@ spring:
      show-sql : false
      open-in-view : false
      # Hibernate ddl auto (create, create-drop, update)
+     generate-ddl: false
      hibernate :
-       ddl-auto : update
+       ddl-auto : none
        naming-strategy : org.hibernate.cfg.ImprovedNamingStrategy
      properties :
         hibernate :
+           ########################################
+           # true, getOne 后加载的引用实体不用再查下database，避免出现no session 错误
+           ########################################
+           enable_lazy_load_no_trans: true
            dialect : org.hibernate.dialect.MySQL5Dialect
   batch : 
       job :
@@ -39,9 +51,16 @@ security:
    basic: 
       enabled: false
 #通过HTTP发送shutdown信号
-endpoints : 
+management:
+   endpoints: 
+      web:
+         exposure:
+           include: '*'
+   endpoint:
       #启用shutdown   
-      shutdown : 
-         enabled : true
+      shutdown: 
+         enabled: true
          #禁用密码验证
-         sensitive : false
+         sensitive: false
+      health:
+         show-details: always

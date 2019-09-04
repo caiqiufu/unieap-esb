@@ -1,5 +1,5 @@
 ##################################################
-#系统级别参数，优先加载
+#系统级别参数，最优先加载
 ##################################################
 spring:
   http:
@@ -7,6 +7,8 @@ spring:
     force: true
     charset: UTF-8
     enabled: true
+    multipart: 
+       location: /data/upload_tmp
   application:
     name: unieap-esb
 #################################################

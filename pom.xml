@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.unieap.esb</groupId>
 	<artifactId>unieap-esb</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>20190721-1.0-SNAPSHOT</version>
 	<name>unieap-esb</name>
 	<url>http://maven.apache.org</url>
 	<properties>
